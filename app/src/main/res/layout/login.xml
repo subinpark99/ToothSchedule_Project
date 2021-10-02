@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+
+<!--  로고넣을 자리  -->
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="70dp"
+        android:src="@drawable/logo"
+        android:layout_marginTop="150dp"/>
+
+
+<!--  ID입력란  -->
+    <EditText
+        android:layout_marginTop="50dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="ID"
+        android:id="@+id/edtID"/>
+
+<!--  패스워드 입력란  -->
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="PW"
+        android:id="@+id/edtPW"/>
+
+
+<!--  로그인 버튼  -->
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:text="Login"
+        android:backgroundTint="@color/whiteblue"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/btnLogin"
+        />
+
+<!--  비회원 로그인 버튼  -->
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="비회원으로 시작하기"
+        android:backgroundTint="@color/whiteblue"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:id="@+id/btnNoLogin"
+        />
+
+<!--  회원가입 버튼  -->
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="회원가입"
+        android:backgroundTint="@color/whiteblue"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:id="@+id/btnSignUp"/>
+
+
+
+</LinearLayout>
