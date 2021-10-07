@@ -7,18 +7,19 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     >
+<!--  메인페이지  -->
 
     <!--  상단  -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:orientation="horizontal"
         >
 
         <!--   마이페이지 버튼    -->
         <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:src="@drawable/mypage"
             android:background="#00000000"
             android:scaleType="fitCenter"
@@ -48,8 +49,9 @@
     <!--  하단 (홈, 정보 게시판 버튼)  -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:orientation="horizontal"
+        android:background="@color/gray"
         >
 
         <Button

@@ -1,6 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<!--  정보게시판  -->
+<!--  10.02 (수정)-->
+
+
+<!--  상단  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/whiteblue"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="정보게시판"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+
+<!--  중앙  -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        >
+
+    <!--   배치     -->
+        <!--  id 설정해줘야함  -->
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="150dp"
+            android:id="@+id/first"
+            android:layout_marginStart="28dp"
+            />
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="150dp"
+            android:id="@+id/second"
+            android:layout_toRightOf="@id/first"
+            android:layout_marginStart="16dp"
+            />
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="150dp"
+            android:id="@+id/third"
+            android:layout_below="@id/first"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="16dp"
+            />
+        <Button
+            android:layout_width="170dp"
+            android:layout_height="150dp"
+            android:id="@+id/forth"
+            android:layout_toRightOf="@id/third"
+            android:layout_below="@id/second"
+            />
+
+    </RelativeLayout>
+
+<!--  하단 버튼  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/gray"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="홈"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="정보게시판"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
 
 </LinearLayout>
