@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!--    sub액티비티 등록    -->
+        <activity android:name=".MyPage"/>
+        <activity android:name=".Notification"/>
+        <activity android:name=".Setting"/>
+        <activity android:name=".Statistic"/>
+        <activity android:name=".InfoBoard"/>
     </application>
 
 </manifest>

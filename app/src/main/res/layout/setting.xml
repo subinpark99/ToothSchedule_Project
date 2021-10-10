@@ -4,30 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
+
+<!--  상단바  -->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="70dp"
+        android:background="@color/whiteblue">
+
         <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/hwa"
-            android:layout_marginStart="13dp"
-            android:layout_marginTop="10dp"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-
-        <TextView
-            android:id="@+id/enter"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="20dp"
-            android:text="설정"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:id="@+id/ibtnBack"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/back"
+            android:background="#00000000" />
 
     </LinearLayout>
 
@@ -39,30 +31,42 @@
 
 
         <Button
-            android:id="@+id/btnperson"
+            android:id="@+id/btnUserInfo"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:backgroundTint="#dedede"
-            android:textSize="20sp"
             android:textColor="@color/black"
+            android:background="#00000000"
             android:text="개인정보 확인" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/whiteblue"/>
 
         <Button
             android:id="@+id/btnbg"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:backgroundTint="#dedede"
-            android:textSize="20sp"
+            android:background="#00000000"
             android:textColor="@color/black"
             android:text="배경 설정" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/whiteblue"/>
+
         <Button
-            android:id="@+id/btnlgout"
+            android:id="@+id/btnLogout"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:backgroundTint="#dedede"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:background="#00000000"
             android:text="로그아웃" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/whiteblue"/>
     </LinearLayout>
 </LinearLayout>

@@ -5,46 +5,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
+<!-- 양치 관리 페이지(1) -->
+<!--  10.10(수정)  -->
 
 
+<!-- 상단 -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_height="70dp"
         android:orientation="horizontal">
-
         <ImageButton
-            android:id="@+id/imbtnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="25dp"
+            android:id="@+id/ibtnBack"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:background="#00000000"
-            app:srcCompat="@drawable/back"
-            tools:ignore="VectorDrawableCompat" />
-
+            app:srcCompat="@drawable/back" />
 
         <TextView
-            android:id="@+id/tvCurentDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/tvDate"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
-            android:background="#D0EEFF"
+            android:background="@color/whiteblue"
             android:text="현재 날짜"
             android:layout_marginLeft="70dp"
-            android:textSize="30dp" />
-
+            android:textColor="@color/black"
+            android:gravity="center"/>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"/>
-
 
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="#020202"/>
+        android:background="@color/gray"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -68,7 +61,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="#020202"/>
+        android:background="@color/gray"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -80,19 +73,18 @@
             android:layout_width="fill_parent"
             android:layout_height="70dp"
             android:drawableLeft="@drawable/tooth"
-            android:paddingLeft="20dp"
-            android:drawablePadding="20dp"
             android:text="점심"
-            android:textSize="25dp"
             android:textAlignment="textStart"
             android:layout_gravity="start"
-            android:background="#00000000" />
+            android:background="#00000000" >
+        </Button>
+
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="#020202"/>
+        android:background="@color/gray"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -112,10 +104,13 @@
             android:layout_gravity="start"
             android:background="#00000000" />
     </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="#020202"/>
+        android:background="@color/gray"/>
+
+
 </LinearLayout>
 
 
