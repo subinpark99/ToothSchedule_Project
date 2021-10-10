@@ -1,6 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+<!--  회원가입 페이지  -->
+<!-- 10.10(수정) -->
+
+<!--  상단  -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+        <ImageButton
+            android:id="@+id/ibtnback"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/back"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="10dp"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:background="#00000000"/>
+
+        <TextView
+            android:id="@+id/enter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원가입"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" />
+
+
+<!--  회원가입 양식  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+    <!--  ID  -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:id="@+id/tvID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="아이디 : "
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="45dp"/>
+
+        <EditText
+            android:id="@+id/edtID"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/tvID"
+            android:inputType="textPersonName"
+            android:background="#dedede"
+            android:layout_marginEnd="16dp"/>
+
+        <Button
+            android:id="@+id/btnDoubleCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/whiteblue"
+            android:text="중복확인"
+            android:textSize="12sp"
+            android:layout_toRightOf="@id/edtID" />
+    </RelativeLayout>
+
+    <!--  PW  -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingTop="8dp">
+        <TextView
+            android:id="@+id/tvPW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="비밀번호 : "
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="30dp"
+            android:paddingTop="8dp"/>
+
+        <EditText
+            android:id="@+id/edtPW"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:inputType="textPassword"
+            android:background="#dedede"
+            android:text=" "
+            android:layout_toRightOf="@id/tvPW"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+    </RelativeLayout>
+
+    <!--  PW확인  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingTop="8dp">
+        <TextView
+            android:id="@+id/tvPwCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="비밀번호 확인 : "
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"/>
+
+        <EditText
+            android:id="@+id/edtPwCheck"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:inputType="textPassword"
+            android:background="#dedede"
+            android:text=" "
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <!--  이름  -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingTop="8dp">
+        <TextView
+            android:id="@+id/tvname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="이름 : "
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="8dp"/>
+
+        <EditText
+            android:id="@+id/edtname"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/tvname"
+            android:inputType="textPersonName"
+            android:background="#dedede"
+            android:text=" "
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+    </RelativeLayout>
+
+    <!--  성별  -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingTop="8dp">
+        <TextView
+            android:id="@+id/tvGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="성별 : "
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="8dp"/>
+
+        <CheckBox
+            android:id="@+id/chbMen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#dedede"
+            android:text="남"
+            android:textSize="16sp"
+            android:layout_toRightOf="@id/tvGender"
+            tools:ignore="TouchTargetSizeCheck"
+            android:layout_marginEnd="8dp"/>
+
+        <CheckBox
+            android:id="@+id/chbWomen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#dedede"
+            android:text="여"
+            android:textSize="16sp"
+            android:layout_toRightOf="@id/chbMen"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RelativeLayout>
+
+    <!--  생년월일  -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:paddingTop="8dp">
+        <TextView
+            android:id="@+id/tvBirth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="생년월일 : "
+            android:layout_marginStart="45dp"/>
+
+        <Spinner
+            android:id="@+id/spYear"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@id/tvBirth"
+            android:background="#dedede"
+            android:layout_marginBottom="8dp"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <Spinner
+            android:id="@+id/spMonth"
+            android:layout_width="95dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/spYear"
+            android:layout_alignLeft="@id/spYear"
+            android:layout_marginEnd="10dp"
+            android:background="#dedede"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <Spinner
+            android:id="@+id/spDay"
+            android:layout_width="95dp"
+            android:layout_height="40dp"
+            android:background="#dedede"
+            android:layout_toRightOf="@id/spMonth"
+            android:layout_below="@id/spYear"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+    </RelativeLayout>
+
+    </LinearLayout>
+
+<!-- 하단 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="380dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/whiteblue"
+        android:text="다음"
+        tools:ignore="SpeakableTextPresentCheck" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/hwa"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="10dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
+
+        <TextView
+            android:id="@+id/enter"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="20dp"
+            android:text="설정"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!--  설정 메뉴  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/btnperson"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:backgroundTint="#dedede"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="개인정보 확인" />
+
+        <Button
+            android:id="@+id/btnbg"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:backgroundTint="#dedede"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="배경 설정" />
+
+        <Button
+            android:id="@+id/btnlgout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:backgroundTint="#dedede"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="로그아웃" />
+    </LinearLayout>
 </LinearLayout>
