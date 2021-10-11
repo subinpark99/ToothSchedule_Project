@@ -22,7 +22,7 @@
         <activity android:name=".Setting"/>
         <activity android:name=".Statistic"/>
         <activity android:name=".InfoBoard"/>
-        <activity android:name=".SignUp"/>
+        <activity android:name=".Login"/>
     </application>
 
 </manifest>
