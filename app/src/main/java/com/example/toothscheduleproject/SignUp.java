@@ -16,8 +16,8 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.signup);
 
         Spinner spinner = findViewById(R.id.spYear);
-        Spinner spinner2 = findViewById(R.id.spMonth);
-        Spinner spinner3 = findViewById(R.id.spDay);
+        Spinner spinner2 = findViewById(R.id.spDay);
+        Spinner spinner3 = findViewById(R.id.spMonth);
 
 
         ArrayAdapter monthAdapter = ArrayAdapter.createFromResource(this, R.array.year, android.R.layout.simple_spinner_dropdown_item);
