@@ -11,7 +11,9 @@
 
     <!-- 4시ㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣㅣ-->
 <!--  4시 11분  !!!-->
+    <!-- 그만하지 커미트    <-->
     <!--  상단  -->
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
