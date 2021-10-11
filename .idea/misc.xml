@@ -3,10 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/activity_main.xml" value="0.22864583333333333" />
-        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/notification.xml" value="0.25364583333333335" />
-        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/schedule.xml" value="0.25364583333333335" />
-        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/schedule_detail.xml" value="0.25364583333333335" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/activity_main.xml" value="0.23541666666666666" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/infoboard.xml" value="0.23541666666666666" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/login.xml" value="0.23541666666666666" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/mypage.xml" value="0.23541666666666666" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/notification.xml" value="0.23541666666666666" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/notification_detail.xml" value="0.23541666666666666" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/schedule.xml" value="0.23541666666666666" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/schedule_detail.xml" value="0.23541666666666666" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/setting.xml" value="0.23541666666666666" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/signup.xml" value="0.23541666666666666" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/statistic.xml" value="0.23541666666666666" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/survey.xml" value="0.23541666666666666" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/survey_result.xml" value="0.23541666666666666" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/userinfo_check.xml" value="0.23541666666666666" />
       </map>
     </option>
   </component>
