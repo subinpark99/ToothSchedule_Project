@@ -16,6 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
 <!--    sub액티비티 등록    -->
         <activity android:name=".MyPage"/>
         <activity android:name=".Notification"/>
