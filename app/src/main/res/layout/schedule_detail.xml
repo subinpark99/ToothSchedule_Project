@@ -25,11 +25,11 @@
 
         <TextView
             android:id="@+id/tvCurentDate"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
+            android:layout_width="130dp"
+            android:layout_height="45dp"
             android:text="현재 날짜"
             android:textColor="@color/black"
-            android:background="@color/whiteblue"
+            android:background="@drawable/round_button_style"
             android:layout_centerInParent="true"
             android:gravity="center"/>
 

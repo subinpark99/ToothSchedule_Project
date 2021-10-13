@@ -13,12 +13,14 @@
         android:id="@+id/ibtnBack"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
             android:text="당신의 평균 양치 횟수 : "
             android:textColor="@color/black"
             android:layout_gravity="center"
             android:id="@+id/tvAvgCount"
+            android:background="@drawable/round_button_style"
+            android:gravity="center"
             />
 
     <View
