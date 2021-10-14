@@ -40,7 +40,8 @@
 
             <RadioGroup
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/radiogroup1">
 
                 <RadioButton
                     android:id="@+id/rbtn1_1"
@@ -50,28 +51,28 @@
                     android:text="0회" />
 
                 <RadioButton
-                    android:id="@+id/rBtn1_2"
+                    android:id="@+id/rbtn1_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:text="1회" />
 
                 <RadioButton
-                    android:id="@+id/rBtn1_3"
+                    android:id="@+id/rbtn1_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:text="2회" />
 
                 <RadioButton
-                    android:id="@+id/rBtn1_4"
+                    android:id="@+id/rbtn1_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:text="3회" />
 
                 <RadioButton
-                    android:id="@+id/rBtn1_5"
+                    android:id="@+id/rbtn1_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
@@ -89,7 +90,8 @@
 
             <RadioGroup
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/radiogroup2">
 
                 <RadioButton
                     android:id="@+id/rbtn2_1"
@@ -124,7 +126,8 @@
 
             <RadioGroup
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/radiogroup3">
 
                 <RadioButton
                     android:id="@+id/rbtn3_1"
@@ -173,7 +176,8 @@
 
             <RadioGroup
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/radiogroup4">
 
                 <RadioButton
                     android:id="@+id/rbtn4_1"
@@ -223,7 +227,8 @@
 
             <RadioGroup
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/radiogroup5">
 
                 <RadioButton
                     android:id="@+id/rbtn5_1"
