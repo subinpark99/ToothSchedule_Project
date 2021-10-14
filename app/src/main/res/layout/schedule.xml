@@ -11,10 +11,10 @@
 <!--    왜 안되는거야-->
 
 <!-- 상단 -->
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal">
+        android:layout_height="70dp">
+
         <ImageButton
             android:id="@+id/ibtnBack"
             android:layout_width="70dp"
@@ -25,14 +25,24 @@
         <TextView
             android:id="@+id/tvDate"
             android:layout_width="130dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
+            android:layout_height="50dp"
             android:background="@drawable/round_button_style"
             android:text="현재 날짜"
             android:layout_marginLeft="70dp"
             android:textColor="@color/black"
-            android:gravity="center"/>
-    </LinearLayout>
+            android:gravity="center"
+            android:layout_centerInParent="true"/>
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/add"
+            android:background="@drawable/round_button_style"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            />
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
@@ -111,19 +121,6 @@
         android:layout_height="2dp"
         android:background="@color/gray"/>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <ImageButton
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:src="@drawable/add"
-            android:background="@drawable/round_button_style"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-
-            />
-    </RelativeLayout>
 
 </LinearLayout>
 
