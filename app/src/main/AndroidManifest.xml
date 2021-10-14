@@ -27,6 +27,7 @@
         </activity>
 
         <activity android:name=".Notification"/>
+        <activity android:name=".NotificationDetail"/>
         <activity android:name=".Statistic"/>
         <activity android:name=".InfoBoard"/>
         <activity android:name=".SurveyResult"/>

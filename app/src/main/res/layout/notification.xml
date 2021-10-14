@@ -51,11 +51,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:id="@+id/swOnOff"
+            android:id="@+id/swAlarm"
             android:layout_alignParentRight="true"/>
 
-
-
     </RelativeLayout>
+
+    <ImageButton
+        android:layout_width="380dp"
+        android:layout_height="40dp"
+        android:src="@drawable/add"
+        android:background="@drawable/round_button_style"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/ibtnAddAlarm"
+        android:visibility="invisible"
+        />
 
 </LinearLayout>
