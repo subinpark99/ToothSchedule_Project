@@ -51,7 +51,6 @@
             android:layout_height="70dp"
             android:paddingLeft="20dp"
             android:drawablePadding="20dp"
-            android:drawableStart="@drawable/toothxml"
             android:drawableLeft="@drawable/toothxml"
             android:text="아침"
             android:textAlignment="textStart"
@@ -73,7 +72,6 @@
             android:id="@+id/btnLunch"
             android:layout_width="fill_parent"
             android:layout_height="70dp"
-            android:drawableStart="@drawable/toothxml"
             android:drawableLeft="@drawable/toothxml"
             android:paddingLeft="20dp"
             android:drawablePadding="20dp"
@@ -99,7 +97,6 @@
             android:id="@+id/btnDinner"
             android:layout_width="fill_parent"
             android:layout_height="70dp"
-            android:drawableStart="@drawable/toothxml"
             android:drawableLeft="@drawable/toothxml"
             android:paddingLeft="20dp"
             android:drawablePadding="20dp"
@@ -114,6 +111,19 @@
         android:layout_height="2dp"
         android:background="@color/gray"/>
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/add"
+            android:background="@drawable/round_button_style"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+
+            />
+    </RelativeLayout>
 
 </LinearLayout>
 
