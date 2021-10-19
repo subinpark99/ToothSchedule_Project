@@ -18,6 +18,7 @@
         android:layout_marginTop="50dp"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
         android:hint="ID"
         android:id="@+id/edtID" />
 
@@ -25,6 +26,7 @@
     <EditText
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:hint="PW"
         android:id="@+id/edtPW"/>
 

@@ -15,33 +15,39 @@
         android:layout_width="match_parent"
         android:layout_height="70dp">
 
-        <ImageButton
+        <FrameLayout
             android:id="@+id/ibtnBack"
             android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/back" />
+            android:layout_height="70dp">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:src="@drawable/back" />
+
+        </FrameLayout>
 
         <TextView
             android:id="@+id/tvDate"
             android:layout_width="130dp"
             android:layout_height="50dp"
-            android:background="@drawable/round_button_style"
-            android:text="현재 날짜"
+            android:layout_centerInParent="true"
             android:layout_marginLeft="70dp"
-            android:textColor="@color/black"
+            android:background="@drawable/round_button_style"
             android:gravity="center"
-            android:layout_centerInParent="true"/>
+            android:text="현재 날짜"
+            android:textColor="@color/black" />
 
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/add"
-            android:background="@drawable/round_button_style"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:layout_marginRight="16dp"
-            />
+            android:background="@drawable/round_button_style"
+            android:src="@drawable/add" />
     </RelativeLayout>
 
     <View
