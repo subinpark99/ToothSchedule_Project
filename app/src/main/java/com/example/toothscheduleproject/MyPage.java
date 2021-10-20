@@ -16,7 +16,7 @@ public class MyPage extends Activity {
 
         ImageButton ibtnBack = (ImageButton)findViewById(R.id.ibtnBack);
         Button btnGraph = (Button)findViewById(R.id.btnGraph);
-        Button btnSetting = (Button)findViewById(R.id.btnSetting);
+
 
         // 뒤로가기 버튼 눌렀을 때
         ibtnBack.setOnClickListener(new View.OnClickListener() {
@@ -35,14 +35,6 @@ public class MyPage extends Activity {
             }
         });
 
-        // 설정 버튼을 눌렀을 때
-        btnSetting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Setting.class);
-                startActivity(intent);
-            }
-        });
     }
 
 

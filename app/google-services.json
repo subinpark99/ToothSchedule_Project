@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "123202152509",
+    "firebase_url": "https://toothschedule-default-rtdb.firebaseio.com",
+    "project_id": "toothschedule",
+    "storage_bucket": "toothschedule.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123202152509:android:2f4ea69f15e8074fa9e254",
+        "android_client_info": {
+          "package_name": "com.example.toothscheduleproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "123202152509-bmule3i0kdhslo9acri3lnber184ok3r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.toothscheduleproject",
+            "certificate_hash": "149cc9e2349c12e488d77b64ea02deb34b4ee25b"
+          }
+        },
+        {
+          "client_id": "123202152509-cirfkcrk2a82a1i3encrakqbmitjve80.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.toothscheduleproject",
+            "certificate_hash": "b79d74d0478a40f2b59cb903e645b079e3d27e22"
+          }
+        },
+        {
+          "client_id": "123202152509-900lr9bi60fhjchhnoo1qusf4eodhb3t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqgQvVHveR3Y62jwNyJa21WC79LHLfLZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "123202152509-900lr9bi60fhjchhnoo1qusf4eodhb3t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

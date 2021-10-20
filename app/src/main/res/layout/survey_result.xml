@@ -10,17 +10,17 @@
     <TextView
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_marginTop="16dp"
         android:text="당신의 양치 습관 점수!"
         android:textColor="@color/black"
-        android:background="@color/whiteblue"/>
+        android:background="@drawable/round_button_style"/>
 
     <ImageView
-        android:id="@+id/imgvbad"
+        android:id="@+id/ivbad"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
@@ -51,11 +51,12 @@
 
     <Button
         android:id="@+id/btnstart"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="5dp"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="16dp"
         android:text="시작하기"
-        android:backgroundTint="@color/whiteblue"/>
+        android:background="@drawable/round_button_style"
+        android:layout_gravity="center"/>
 
 </LinearLayout>

@@ -7,31 +7,48 @@
     android:orientation="vertical">
 <!-- 양치 관리 페이지(1) -->
 <!--  10.10(수정)  -->
-
+<!--    마지막 주석!!!-->
+<!--    왜 안되는거야-->
 
 <!-- 상단 -->
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:orientation="horizontal">
-        <ImageButton
+        android:layout_height="70dp">
+
+        <FrameLayout
             android:id="@+id/ibtnBack"
             android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="#00000000"
-            app:srcCompat="@drawable/back" />
+            android:layout_height="70dp">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:src="@drawable/back" />
+
+        </FrameLayout>
 
         <TextView
             android:id="@+id/tvDate"
             android:layout_width="130dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:background="@color/whiteblue"
-            android:text="현재 날짜"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
             android:layout_marginLeft="70dp"
-            android:textColor="@color/black"
-            android:gravity="center"/>
-    </LinearLayout>
+            android:background="@drawable/round_button_style"
+            android:gravity="center"
+            android:text="현재 날짜"
+            android:textColor="@color/black" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/round_button_style"
+            android:src="@drawable/add" />
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
@@ -48,11 +65,10 @@
             android:id="@+id/btnMorning"
             android:layout_width="fill_parent"
             android:layout_height="70dp"
-            android:drawableLeft="@drawable/tooth"
             android:paddingLeft="20dp"
             android:drawablePadding="20dp"
+            android:drawableLeft="@drawable/toothxml"
             android:text="아침"
-            android:textSize="25dp"
             android:textAlignment="textStart"
             android:layout_gravity="start"
             android:background="#00000000" />
@@ -72,7 +88,9 @@
             android:id="@+id/btnLunch"
             android:layout_width="fill_parent"
             android:layout_height="70dp"
-            android:drawableLeft="@drawable/tooth"
+            android:drawableLeft="@drawable/toothxml"
+            android:paddingLeft="20dp"
+            android:drawablePadding="20dp"
             android:text="점심"
             android:textAlignment="textStart"
             android:layout_gravity="start"
@@ -95,11 +113,10 @@
             android:id="@+id/btnDinner"
             android:layout_width="fill_parent"
             android:layout_height="70dp"
-            android:drawableLeft="@drawable/tooth"
+            android:drawableLeft="@drawable/toothxml"
             android:paddingLeft="20dp"
             android:drawablePadding="20dp"
             android:text="저녁"
-            android:textSize="25dp"
             android:textAlignment="textStart"
             android:layout_gravity="start"
             android:background="#00000000" />

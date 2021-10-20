@@ -14,32 +14,46 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <ImageButton
+        <FrameLayout
             android:id="@+id/ibtnback"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            app:srcCompat="@drawable/back"
-            tools:ignore="VectorDrawableCompat"
-            android:background="#00000000"
-            />
+            android:layout_alignParentLeft="true">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="#00000000"
+                android:layout_gravity="center"
+                android:src="@drawable/back"
+                tools:ignore="VectorDrawableCompat" />
+        </FrameLayout>
 
         <TextView
             android:id="@+id/tvCurentDate"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:text="현재 날짜"
-            android:textColor="@color/black"
-            android:background="@color/whiteblue"
+            android:layout_width="130dp"
+            android:layout_height="45dp"
             android:layout_centerInParent="true"
-            android:gravity="center"/>
+            android:background="@drawable/round_button_style"
+            android:gravity="center"
+            android:text="현재 날짜"
+            android:textColor="@color/black" />
 
-        <ImageButton
+        <FrameLayout
             android:id="@+id/ibtncheck"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            app:srcCompat="@drawable/save"
-            android:background="#00000000"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:background="#00000000"
+                android:src="@drawable/save" />
+        </FrameLayout>
+
+
     </RelativeLayout>
 
     <View
@@ -62,13 +76,13 @@
             android:src="@drawable/tooth" />
 
         <TextView
-            android:id="@+id/tvMorning"
+            android:id="@+id/tvTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#00000000"
             android:layout_marginVertical="40dp"
-            android:text="아침"
             android:layout_marginLeft="10dp"
+            android:background="#00000000"
+            android:text=" "
             android:textSize="20dp" />
     </LinearLayout>
 
@@ -88,27 +102,53 @@
         android:gravity="center"
         android:layout_marginBottom="30dp">
 
-
-        <Button
-            android:id="@+id/btn1_1"
-            android:layout_width="120dp"
+        <RadioGroup
+            android:id="@+id/rg_meal_time"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1분 30초 미만"
-            android:textSize="12dp"/>
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn1_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1분 30초 이상 3분 미만"
-            android:textSize="12dp"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1분 30초 미만"/>
 
-        <Button
-            android:id="@+id/btn1_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3분 이상"
-            android:textSize="12dp"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:text="1분 30초 이상\n3분 미만"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="3분 이상"/>
+
+        </RadioGroup>
+
+<!--        <Button-->
+<!--            android:id="@+id/btn1_1"-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="1분 30초 미만"-->
+<!--            android:textSize="12dp"/>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn1_2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="1분 30초 이상 3분 미만"-->
+<!--            android:textSize="12dp"/>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn1_3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="3분 이상"-->
+<!--            android:textSize="12dp"/>-->
     </LinearLayout>
 
     <TextView
@@ -127,26 +167,52 @@
         android:gravity="center"
         android:layout_marginBottom="30dp">
 
-        <Button
-            android:id="@+id/btn2_1"
-            android:layout_width="120dp"
+        <RadioGroup
+            android:id="@+id/rg_after_meal_time"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="식후 3분 이내"
-            android:textSize="12dp"/>
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn2_2"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="식후 10분 이내"
-            android:textSize="12dp"/>
+           <RadioButton
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="식후 3분 이내"/>
 
-        <Button
-            android:id="@+id/btn2_3"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="식후 30분 이상"
-            android:textSize="12dp"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="식후 10분 이내"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="식후 30분 이상"/>
+
+        </RadioGroup>
+
+<!--        <Button-->
+<!--            android:id="@+id/btn2_1"-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="식후 3분 이내"-->
+<!--            android:textSize="12dp"/>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn2_2"-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="식후 10분 이내"-->
+<!--            android:textSize="12dp"/>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn2_3"-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="식후 30분 이상"-->
+<!--            android:textSize="12dp"/>-->
     </LinearLayout>
 
     <TextView
@@ -165,26 +231,52 @@
         android:gravity="center"
         android:layout_marginBottom="30dp">
 
-        <Button
-            android:id="@+id/btn3_1"
-            android:layout_width="120dp"
+        <RadioGroup
+            android:id="@+id/rg_sub_machine"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="치실"
-            android:textSize="12dp"/>
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn3_2"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="가그린"
-            android:textSize="12dp"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="치실"/>
 
-        <Button
-            android:id="@+id/btn3_3"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="사용안함"
-            android:textSize="12dp"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="가그린"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="사용안함"/>
+
+        </RadioGroup>
+
+<!--        <Button-->
+<!--            android:id="@+id/btn3_1"-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="치실"-->
+<!--            android:textSize="12dp"/>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn3_2"-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="가그린"-->
+<!--            android:textSize="12dp"/>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn3_3"-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="사용안함"-->
+<!--            android:textSize="12dp"/>-->
     </LinearLayout>
 
 

@@ -18,13 +18,15 @@
         android:layout_marginTop="50dp"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
         android:hint="ID"
-        android:id="@+id/edtID"/>
+        android:id="@+id/edtID" />
 
 <!--  패스워드 입력란  -->
     <EditText
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:hint="PW"
         android:id="@+id/edtPW"/>
 
@@ -34,7 +36,7 @@
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:text="Login"
-        android:backgroundTint="@color/whiteblue"
+        android:background="@drawable/round_button_style"
         android:textColor="@color/black"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
@@ -46,10 +48,11 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:text="비회원으로 시작하기"
-        android:backgroundTint="@color/whiteblue"
+        android:background="@drawable/round_button_style"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:id="@+id/btnNoLogin"
+        android:layout_marginBottom="8dp"
         />
 
 <!--  회원가입 버튼  -->
@@ -57,7 +60,7 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:text="회원가입"
-        android:backgroundTint="@color/whiteblue"
+        android:background="@drawable/round_button_style"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:id="@+id/btnSignUp"/>
