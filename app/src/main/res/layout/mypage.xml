@@ -12,8 +12,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:background="#00000000"
-        app:srcCompat="@drawable/back"
-        tools:ignore="VectorDrawableCompat" />
+        android:src="@drawable/back"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,8 +27,7 @@
             android:layout_height="60dp"
             android:layout_marginLeft="70dp"
             android:gravity="center"
-            app:srcCompat="@drawable/user"
-            tools:ignore="VectorDrawableCompat" />
+            android:src="@drawable/user"/>
 
         <TextView
             android:id="@+id/tvUserName"
