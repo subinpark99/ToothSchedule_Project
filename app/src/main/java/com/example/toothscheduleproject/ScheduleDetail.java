@@ -169,7 +169,8 @@ public class ScheduleDetail extends Activity implements View.OnClickListener {
                             mDatabaseRef.child("UserInfo").child(mFirebaseAuth.getCurrentUser().getUid()).setValue(userInfo);
 
                             Toast.makeText(ScheduleDetail.this, "작성 완료 되었습니다.", Toast.LENGTH_SHORT).show();
-                            finish();
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(intent);
                         }
                     }
 
