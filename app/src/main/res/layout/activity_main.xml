@@ -38,13 +38,17 @@
     <!--  중간 (달력들어갈 곳)  -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <com.applandeo.materialcalendarview.CalendarView
             android:id="@+id/calendarView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:eventsEnabled = "true"
+            app:headerColor="#B8E0FF"
+            app:headerLabelColor="@color/black"
+            app:todayLabelColor="#7BB6FF"
             />
     </LinearLayout>
 
