@@ -51,6 +51,9 @@ public class MyPage extends Activity {
 
                     tvID.setText(userId);
                     tvUserName.setText(userName);
+                } else{
+                    tvID.setVisibility(View.INVISIBLE);
+                    tvUserName.setVisibility(View.INVISIBLE);
                 }
             }
 
@@ -83,6 +86,8 @@ public class MyPage extends Activity {
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
                 Toast.makeText(MyPage.this, "로그아웃", Toast.LENGTH_SHORT).show();
+
+                //로그아웃 시 로그인 페이지로 이동
                 Intent intent = new Intent(getApplicationContext(), Login.class);
                 startActivity(intent);
             }
