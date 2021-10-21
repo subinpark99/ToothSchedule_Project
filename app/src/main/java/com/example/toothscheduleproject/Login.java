@@ -65,11 +65,12 @@ public class Login extends Activity implements View.OnClickListener {
                             Intent intent = new Intent(Login.this, MainActivity.class);
                             startActivity(intent);
                             finish(); // 현재 액티비티 파괴
-                        } else {
-                            Log.e("LOGIN_ERROR", task.getException().getMessage());
-                            Toast.makeText(Login.this, "로그인 실패..!", Toast.LENGTH_SHORT).show();
                         }
-                    }
+                        else {
+                                Log.e("LOGIN_ERROR", task.getException().getMessage());
+                                Toast.makeText(Login.this, "로그인 실패..!", Toast.LENGTH_SHORT).show();
+                            }
+                        }
                 });
                 break;
 
