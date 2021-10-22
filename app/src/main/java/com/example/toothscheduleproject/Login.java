@@ -55,6 +55,7 @@ public class Login extends Activity implements View.OnClickListener {
                 String strEmail = mEtEmail.getText().toString();
                 String strPwd = mEtPwd.getText().toString();
 
+                //아이디 또는 비밀번호 공백시 토스트 문자 출력
                 if(strEmail.equals("")||strPwd.equals("")){
                     Toast.makeText(Login.this, "아이디 또는 비빌번호를 입력", Toast.LENGTH_SHORT).show();
                 }
