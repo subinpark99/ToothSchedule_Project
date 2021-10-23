@@ -106,7 +106,7 @@
             android:layout_toRightOf="@id/tvPW"
             android:background="#dedede"
             android:inputType="textPassword"
-            android:text=" "
+            android:text=""
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </RelativeLayout>
 
@@ -130,7 +130,7 @@
             android:layout_height="40dp"
             android:inputType="textPassword"
             android:background="#dedede"
-            android:text=" "
+            android:text=""
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </LinearLayout>
 
