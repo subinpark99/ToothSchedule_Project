@@ -42,6 +42,7 @@ public class MyPage extends Activity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserInfo userInfo = null;
+
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     userInfo = dataSnapshot.getValue(UserInfo.class);
                 }
