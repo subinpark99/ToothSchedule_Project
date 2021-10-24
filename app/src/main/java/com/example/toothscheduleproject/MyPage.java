@@ -1,6 +1,7 @@
 package com.example.toothscheduleproject;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +32,7 @@ public class MyPage extends Activity {
         ImageButton ibtnBack = (ImageButton) findViewById(R.id.ibtnBack);
         Button btnGraph = (Button) findViewById(R.id.btnGraph);
         Button btnLogout = (Button) findViewById(R.id.btnLogout);
+        Button btnAppVer=(Button) findViewById(R.id.btnAppVer);
         TextView tvID = findViewById(R.id.tvID);
         TextView tvUserName = findViewById(R.id.tvUserName);
 
@@ -93,6 +95,19 @@ public class MyPage extends Activity {
                 startActivity(intent);
             }
         });
+
+
+    }
+
+    public void OnClickHandler(View view)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("버전 정보").setMessage("v1.0");
+
+        AlertDialog alertDialog = builder.create();
+
+        alertDialog.show();
     }
 }
 

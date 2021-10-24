@@ -20,5 +20,7 @@ public class NotificationDetail extends Activity {
                 finish();
             }
         });
+
+
     }
 }
