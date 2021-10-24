@@ -93,7 +93,7 @@
         android:id="@+id/btnAppVer"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="앱 버전"
+        android:text="앱 정보"
         android:onClick="OnClickHandler"
         android:background="#00000000"
         android:textColor="@color/black" />
