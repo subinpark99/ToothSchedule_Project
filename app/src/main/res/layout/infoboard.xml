@@ -37,8 +37,7 @@
             android:id="@+id/first"
             android:layout_width="170dp"
             android:layout_height="150dp"
-            android:layout_marginStart="28dp"
-            />
+            android:layout_marginStart="28dp" />
 
         <Button
             android:id="@+id/second"
