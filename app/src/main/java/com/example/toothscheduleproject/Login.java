@@ -57,7 +57,7 @@ public class Login extends Activity implements View.OnClickListener {
 
                 //아이디 또는 비밀번호 공백시 토스트 문자 출력
                 if(strEmail.equals("")||strPwd.equals("")){
-                    Toast.makeText(Login.this, "아이디 또는 비빌번호를 입력", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "아이디와 비빌번호를 입력하세요.", Toast.LENGTH_SHORT).show();
                 }
                 else {
 
@@ -71,7 +71,7 @@ public class Login extends Activity implements View.OnClickListener {
                                 finish(); // 현재 액티비티 파괴
                             } else {
                                 Log.e("LOGIN_ERROR", task.getException().getMessage());
-                                Toast.makeText(Login.this, "로그인 실패..!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login.this, "로그인 실패!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
