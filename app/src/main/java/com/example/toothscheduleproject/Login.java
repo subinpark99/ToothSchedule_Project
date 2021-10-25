@@ -33,7 +33,6 @@ public class Login extends Activity implements View.OnClickListener {
         mEtEmail = findViewById(R.id.edtID);
         mEtPwd = findViewById(R.id.edtPW);
 
-        findViewById(R.id.btnNoLogin).setOnClickListener(this);
         findViewById(R.id.btnLogin).setOnClickListener(this);
         findViewById(R.id.btnSignUp).setOnClickListener(this);
 
@@ -43,13 +42,6 @@ public class Login extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btnNoLogin:
-                // 비회원 시작, 비회원일 경우 설문조사는 하지 않음
-                Intent intent = new Intent(Login.this, MainActivity.class);
-                startActivity(intent);
-                finish(); // 현재 액티비티 파괴
-                break;
-
             case R.id.btnLogin:
                 // 로그인 요청
                 String strEmail = mEtEmail.getText().toString();

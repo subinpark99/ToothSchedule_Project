@@ -56,6 +56,13 @@
 
     </RelativeLayout>
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lvAlarm">
+
+    </ListView>
+
     <ImageButton
         android:layout_width="380dp"
         android:layout_height="40dp"
