@@ -103,7 +103,7 @@
         android:layout_marginBottom="30dp">
 
         <RadioGroup
-            android:id="@+id/rg_meal_time"
+            android:id="@+id/rg_brush_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">

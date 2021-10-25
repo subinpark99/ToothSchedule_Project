@@ -26,7 +26,7 @@ public class ScheduleDetail extends Activity implements View.OnClickListener {
     private DatabaseReference mDatabaseRef;
 
     private RadioGroup
-            mRgMealTime,
+            mRgBrushTime,
             mRgAfterMeal,
             mRgSubMachine;
 
@@ -35,7 +35,7 @@ public class ScheduleDetail extends Activity implements View.OnClickListener {
     private int mYear = 0, mMonth = 0 , mDay = 0;
 
     private int
-            mMealTimeType = -1,      // 양치 시간
+            mBrushTimeType = -1,      // 양치 시간
             mAfterMealTimeType = -1, // 식후 양치 시간
             mSubMachineType = -1;    // 구강 보조기구 사용
 
@@ -58,7 +58,7 @@ public class ScheduleDetail extends Activity implements View.OnClickListener {
         }
 
 
-        mRgMealTime = findViewById(R.id.rg_meal_time);
+        mRgBrushTime = findViewById(R.id.rg_brush_time);
         mRgAfterMeal = findViewById(R.id.rg_after_meal_time);
         mRgSubMachine = findViewById(R.id.rg_sub_machine);
 
@@ -83,11 +83,11 @@ public class ScheduleDetail extends Activity implements View.OnClickListener {
                     if (lstToothTimeInfo != null) {
                         for (int i = 0; i < lstToothTimeInfo.size(); i++) {
                             if ( lstToothTimeInfo.get(i).getTimeType().equals(mTimeType) && lstToothTimeInfo.get(i).getDate().equals(mYear + "/" + mMonth + "/" + mDay)) {
-                                mMealTimeType = lstToothTimeInfo.get(i).getmMealTimeType();
+                                mBrushTimeType = lstToothTimeInfo.get(i).getmBrushTimeType();
                                 mAfterMealTimeType = lstToothTimeInfo.get(i).getmAfterMealTimeType();
                                 mSubMachineType = lstToothTimeInfo.get(i).getmSubMachineType();
 
-                                ((RadioButton) mRgMealTime.getChildAt(mMealTimeType)).setChecked(true);
+                                ((RadioButton) mRgBrushTime.getChildAt(mBrushTimeType)).setChecked(true);
                                 ((RadioButton) mRgAfterMeal.getChildAt(mAfterMealTimeType)).setChecked(true);
                                 ((RadioButton) mRgSubMachine.getChildAt(mSubMachineType)).setChecked(true);
                             }
@@ -113,12 +113,12 @@ public class ScheduleDetail extends Activity implements View.OnClickListener {
             case R.id.ibtncheck:
                 // 작성완료 버튼
 
-                mMealTimeType = mRgMealTime.indexOfChild(findViewById(mRgMealTime.getCheckedRadioButtonId()));
+                mBrushTimeType = mRgBrushTime.indexOfChild(findViewById(mRgBrushTime.getCheckedRadioButtonId()));
                 mAfterMealTimeType = mRgAfterMeal.indexOfChild(findViewById(mRgAfterMeal.getCheckedRadioButtonId()));
                 mSubMachineType = mRgSubMachine.indexOfChild(findViewById(mRgSubMachine.getCheckedRadioButtonId()));
 
                 // 라디오 버튼들 선택되어있는지 검사
-                if(mMealTimeType == -1 || mAfterMealTimeType == -1 || mSubMachineType == -1) {
+                if(mBrushTimeType == -1 || mAfterMealTimeType == -1 || mSubMachineType == -1) {
                     // 선택된 날씨가 없음
                     Toast.makeText(this, "선택 옵션을 모두 선택해주세요.", Toast.LENGTH_SHORT).show();
                     return;
@@ -151,7 +151,7 @@ public class ScheduleDetail extends Activity implements View.OnClickListener {
                             ToothTimeInfo toothTimeInfo = new ToothTimeInfo();
                             toothTimeInfo.setTimeType(mTimeType);
                             toothTimeInfo.setDate(date);
-                            toothTimeInfo.setmMealTimeType(mMealTimeType);
+                            toothTimeInfo.setmBrushTimeType(mBrushTimeType);
                             toothTimeInfo.setmAfterMealTimeType(mAfterMealTimeType);
                             toothTimeInfo.setmSubMachineType(mSubMachineType);
                             if (isAlreadyExist) {

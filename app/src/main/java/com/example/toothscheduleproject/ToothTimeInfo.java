@@ -7,7 +7,7 @@ public class ToothTimeInfo {
     private String timeType;    // 아침 or 점심 or 저녁
 
     private int
-            mMealTimeType,      // 양치 시간
+            mBrushTimeType,      // 양치 시간
             mAfterMealTimeType, // 식후 양치 시간
             mSubMachineType;    // 구강 보조기구 사용
 
@@ -29,12 +29,12 @@ public class ToothTimeInfo {
         this.timeType = timeType;
     }
 
-    public int getmMealTimeType() {
-        return mMealTimeType;
+    public int getmBrushTimeType() {
+        return mBrushTimeType;
     }
 
-    public void setmMealTimeType(int mMealTimeType) {
-        this.mMealTimeType = mMealTimeType;
+    public void setmBrushTimeType(int mMealTimeType) {
+        this.mBrushTimeType = mBrushTimeType;
     }
 
     public int getmAfterMealTimeType() {
