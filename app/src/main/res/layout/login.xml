@@ -14,7 +14,6 @@
         android:layout_marginTop="150dp"
         />
 
-
 <!--  ID입력란  -->
     <EditText
         android:layout_marginTop="50dp"
@@ -35,7 +34,7 @@
 
 <!--  로그인 버튼  -->
     <Button
-        android:layout_width="150dp"
+        android:layout_width="170dp"
         android:layout_height="70dp"
         android:text="Login"
         android:background="@drawable/round_button_style"
@@ -45,17 +44,6 @@
         android:id="@+id/btnLogin"
         />
 
-<!--  비회원 로그인 버튼  -->
-    <Button
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:text="비회원으로 시작하기"
-        android:background="@drawable/round_button_style"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:id="@+id/btnNoLogin"
-        android:layout_marginBottom="8dp"
-        />
 
 <!--  회원가입 버튼  -->
     <Button
