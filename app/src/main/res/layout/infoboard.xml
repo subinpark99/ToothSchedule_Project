@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-<!--  정보게시판  -->
-<!--  10.02 (수정)-->
 
 
-<!--  상단  -->
+    <!--  상단  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:background="@color/whiteblue"
         android:gravity="center"
         android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -24,49 +24,42 @@
             />
     </LinearLayout>
 
-<!--  중앙  -->
-    <RelativeLayout
+    <!--  중앙  -->
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:layout_weight="1"
         >
 
-    <!--   배치     -->
-        <!--  id 설정해줘야함  -->
-        <Button
-            android:id="@+id/first"
-            android:layout_width="170dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="28dp" />
+        <me.relex.circleindicator.CircleIndicator3
+            android:id="@+id/indicator"
+            app:ci_drawable="@drawable/wb_indicator"
+            app:ci_width="5pt"
+            app:ci_height="5pt"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="bottom"
+            tools:ignore="MissingClass" />
 
-        <Button
-            android:id="@+id/second"
-            android:layout_width="170dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="16dp"
-            android:layout_toRightOf="@id/first" />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/pager"
+            android:layout_width="355dp"
+            android:layout_height="500dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/color"/>
 
-        <Button
-            android:id="@+id/third"
-            android:layout_width="170dp"
-            android:layout_height="150dp"
-            android:layout_below="@id/first"
-            android:layout_marginStart="28dp"
-            android:layout_marginEnd="16dp" />
 
-        <Button
-            android:id="@+id/forth"
-            android:layout_width="170dp"
-            android:layout_height="150dp"
-            android:layout_below="@id/second"
-            android:layout_toRightOf="@id/third" />
+    </FrameLayout>
 
-    </RelativeLayout>
-
-<!--  하단 버튼  -->
+    <!--  하단 버튼  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"
+
         android:orientation="horizontal"
         >
 
@@ -78,7 +71,6 @@
             android:textColor="@color/black"
             android:background="@color/whiteblue"
             android:id="@+id/btnHome"
-            android:drawableTop="@drawable/home"
             android:paddingTop="13dp"
             android:paddingBottom="13dp"
             android:textSize="12sp"/>
@@ -91,7 +83,6 @@
             android:textColor="@color/black"
             android:background="@color/whiteblue"
             android:id="@+id/btnInfo"
-            android:drawableTop="@drawable/infoxml"
             android:paddingTop="14dp"
             android:paddingBottom="12dp"
             android:textSize="12sp"/>

@@ -1,135 +1,61 @@
 package com.example.toothscheduleproject;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
-import com.applandeo.materialcalendarview.CalendarView;
-import com.applandeo.materialcalendarview.EventDay;
-import com.applandeo.materialcalendarview.exceptions.OutOfDateRangeException;
-import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
+import me.relex.circleindicator.CircleIndicator3;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FirebaseAuth mFirebaseAuth;
-    private DatabaseReference mDatabaseRef;
-    private CalendarView mCalendarView;
+    private ViewPager2 mPager;
+    private FragmentStateAdapter pagerAdapter;
+    private int num_page = 6;
+    private CircleIndicator3 mIndicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mFirebaseAuth = FirebaseAuth.getInstance();
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("ToothSchedule");
+        /**
+         * 가로 슬라이드 뷰 Fragment
+         */
 
-        ImageButton ibtnMypage = findViewById(R.id.ibtnMypage);
-        ImageButton ibtnNotification = findViewById(R.id.ibtnNotification);
-        Button btnInfo = findViewById(R.id.btnInfo);
-
-        // 달력
-        mCalendarView = findViewById(R.id.calendarView);
-        try {
-            mCalendarView.setDate(Calendar.getInstance());
-        } catch (OutOfDateRangeException e) {
-            e.printStackTrace();
-        }
-
-        // 기존 서버 데이터 존재하면 달력에 이벤트 뿌려주기
-        setCalendarEventFromServer();
+        //ViewPager2
+        mPager = findViewById(R.id.pager);
+        //Adapter
+        pagerAdapter = new MyAdapter(this, num_page);
+        mPager.setAdapter(pagerAdapter);
+        //Indicator
+        mIndicator = findViewById(R.id.indicator);
+        mIndicator.setViewPager(mPager);
+        mIndicator.createIndicators(num_page,0);
+        //ViewPager Setting
+        mPager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
 
 
-        // 달력 날짜 클릭 리스너
-        mCalendarView.setOnDayClickListener(new OnDayClickListener() {
+
+        mPager.setCurrentItem(1000); //시작 지점
+        mPager.setOffscreenPageLimit(6); //최대 이미지 수
+
+        mPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
-            public void onDayClick(EventDay eventDay) {
-                Calendar calendar = eventDay.getCalendar();
-                int year = calendar.get(Calendar.YEAR);
-                int month = (calendar.get(Calendar.MONTH)) + 1;
-                int day = calendar.get(Calendar.DAY_OF_MONTH);
-
-                Intent scheduleIntent = new Intent(MainActivity.this, Schedule.class);
-                scheduleIntent.putExtra("year", year);
-                scheduleIntent.putExtra("month", month);
-                scheduleIntent.putExtra("day", day);
-                startActivity(scheduleIntent);
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+                if (positionOffsetPixels == 0) {
+                    mPager.setCurrentItem(position);
+                }
             }
-        });
 
-        // 마이페이지 버튼 눌렀을 때
-        ibtnMypage.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MyPage.class);
-                startActivity(intent);
-            }
-        });
-
-        // 종버튼 눌렀을 때
-        ibtnNotification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Notification.class);
-                startActivity(intent);
-            }
-        });
-
-        // 정보게시판 버튼 눌렀을 때 정보게시판 페이지로 이동
-        btnInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), InfoBoard.class);
-                startActivity(intent);
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                mIndicator.animatePageSelected(position%num_page);
             }
         });
     }
 
-    private void setCalendarEventFromServer() {
-        List<EventDay> events = new ArrayList<>(); // 달력 이벤트 존재날짜 모아두는 배열
-
-        ArrayList<ToothTimeInfo> lstToothTime = new ArrayList<>(); // 서버 데이터 받아내는 배열
-        mDatabaseRef.child("UserInfo").child(mFirebaseAuth.getCurrentUser().getUid()).child("lstToothTime").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                    ToothTimeInfo toothTimeInfo = dataSnapshot.getValue(ToothTimeInfo.class);
-                    lstToothTime.add(toothTimeInfo);
-                }
-
-                for (int i = 0; i < lstToothTime.size(); i++) {
-                    String[] splitDate = lstToothTime.get(i).getDate().split("/");
-                    int year = Integer.parseInt(splitDate[0]);
-                    int month = Integer.parseInt(splitDate[1]) - 1;
-                    int day = Integer.parseInt(splitDate[2]);
-                    Calendar calendar = Calendar.getInstance();
-                    calendar.set(Calendar.YEAR, year);
-                    calendar.set(Calendar.MONTH, month);
-                    calendar.set(Calendar.DAY_OF_MONTH, day);
-                    events.add(new EventDay(calendar, R.drawable.dot));
-                }
-
-                mCalendarView.setEvents(events);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
 }
