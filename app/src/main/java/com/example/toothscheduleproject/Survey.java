@@ -120,7 +120,7 @@ public class Survey extends Activity {
             btnSubmit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), SurveyResult.class);
+                    Intent intent = new Intent(getApplicationContext(), SurveyResultBad.class);
                     startActivity(intent);
                 }
             });
