@@ -116,23 +116,18 @@ public class Survey extends Activity {
         });
 
         //점수 총합이 12점 이하이면 치과추천으로 넘어감
-        if (result1 + result2 + result3 + result4 + result5 <= 12) {
-            btnSubmit.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (result1 + result2 + result3 + result4 + result5 <= 12) {
                     Intent intent = new Intent(getApplicationContext(), SurveyResultBad.class);
                     startActivity(intent);
-                }
-            });
-        } else {
-            btnSubmit.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+                } else {
                     Intent intent = new Intent(getApplicationContext(), SurveyResult.class);
                     startActivity(intent);
                 }
 
-            });
-        }
+            }
+        });
     }
 }
