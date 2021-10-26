@@ -10,11 +10,91 @@
     android:orientation="vertical"
     tools:context=".Ex06Fragment">
 
-    <TextView android:id="@+id/textView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="666"
-        android:textColor="@color/black"
-        android:textSize="30sp" />
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="30dp"
+            android:text="자주하는 질문"
+            android:textColor="@color/olive"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sigi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text=" 1.  칫솔 교체 시기는 언제일까? "/>
+
+        <TextView
+            android:id="@+id/txtsigi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="130dp"
+            android:layout_marginEnd="20dp"
+            android:text="   개인이 어떻게 칫솔을 사용하고 관리하는지에 따라 상태가 다 다르겠지만, 평균 3개월에 한 번씩 바꾸는 것이 좋다. 만약 교체시기가 되지 않았더라도 칫솔모 사이가 많이 벌어져있거나 칫솔질할 때 잇몸이 쓸리면 손상이 생길 수 있으므로 바로 칫솔을 교체해야한다.  "
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/mibaek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="260dp"
+            android:layout_marginEnd="20dp"
+            android:text=" 2. 미백 치약을 쓰면 정말 치아가 하얘질까? "
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txtmibaek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="300dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="15sp"
+            android:text="   미백 치약은 치아의 착색을 막아주는 효과는 있지만 치아의 색을 눈에 띄게 변화시키지는 못한다. 치아 미백을 받고 미백 치약을 계속 사용할 경우에는 시너지 효과가 있기 때문에 미백 치료를 받은 후 치아 색을 유지시키는 목적으로 사용한다면 효과를 볼 수 있다. 하지만 오랜 시간 과하게 사용하면 잇몸 손상이 발생할 수 있고, 치아 상태에 따라 치아과민증 등 부작용이 생길 수 있어 무분별한 사용은 추천되지 않는다."/>
+        <TextView
+            android:id="@+id/gageul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="490dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:text=" 3. 구강청결제가 양치질을 대신할 수 있을까?
+ "/>
+        <TextView
+            android:id="@+id/txtwater"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="530dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="15sp"
+            android:text="   치아와 잇몸에 안 좋은 영향을 끼치는 것들은 치아와 잇몸에 접착성 있게 붙어있기 때문에 구강청결제 만으로 양치질의 효과를 보기란 어렵다. 치태를 제거하는 효과는 양치질에 비해 떨어진다. 하지만  입안 세균 억제와 구취 제거, 잇몸 질환 예방등의 구강 건강 관리 목적으로 사용될 때 효과가 있다. "/>
+    </RelativeLayout>
+    </ScrollView>
 </LinearLayout>
