@@ -41,7 +41,7 @@ public class InfoBoard extends AppCompatActivity {
         mPager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
 
 
-        mPager.setCurrentItem(1000); //시작 지점
+        mPager.setCurrentItem(1); //시작 지점
         mPager.setOffscreenPageLimit(6); //최대 이미지 수
 
         mPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
