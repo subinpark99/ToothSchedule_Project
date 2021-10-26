@@ -14,7 +14,8 @@ public class UserInfo {
     private String birth;       // 생년월일
     private int surveySum;      // 설문조사 결과
 
-    private ArrayList<ToothTimeInfo> lstToothTime; // 양치 시간 작성정보
+    private ArrayList<ToothTimeInfo> lstToothTime;      // 양치 시간 작성정보
+    private ArrayList<NotificationInfo> lstAlarmTime;  // 알림 시간 작성정보
 
     public UserInfo() { }
 
@@ -71,14 +72,15 @@ public class UserInfo {
     }
 
     public void setLstToothTime(ArrayList<ToothTimeInfo> lstToothTime) {
-        this.lstToothTime = lstToothTime;
+        this.lstToothTime = lstToothTime; }
+
+    public ArrayList<NotificationInfo> getLstAlarmTime() { return lstAlarmTime; }
+
+    public void setLstAlarmTime(ArrayList<NotificationInfo> lstAlarmTime) {
+        this.lstAlarmTime = lstAlarmTime;
     }
 
-    public int getSurveySum() {
-        return surveySum;
-    }
+    public int getSurveySum() { return surveySum; }
 
-    public void setSurveySum(int surveySum) {
-        this.surveySum = surveySum;
-    }
+    public void setSurveySum(int surveySum) { this.surveySum = surveySum; }
 }
