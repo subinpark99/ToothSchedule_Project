@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ToothScheduleProject">
+        
 
         <activity android:name=".MainActivity" />
         <activity android:name=".Schedule"/>
@@ -36,6 +37,7 @@
         <activity android:name=".InfoBoard"/>
         <activity android:name=".Survey"/>
         <activity android:name=".SurveyResult"/>
+        <activity android:name=".SurveyResultBad"/>
     </application>
 
 </manifest>
