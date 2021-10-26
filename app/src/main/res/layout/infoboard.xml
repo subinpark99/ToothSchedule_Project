@@ -38,15 +38,15 @@
             app:ci_width="5pt"
             app:ci_height="5pt"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="30dp"
             android:layout_marginBottom="10dp"
             android:layout_gravity="bottom"
             tools:ignore="MissingClass" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/pager"
-            android:layout_width="355dp"
-            android:layout_height="500dp"
+            android:layout_width="372dp"
+            android:layout_height="465dp"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
@@ -55,11 +55,11 @@
 
     </FrameLayout>
 
-    <!--  하단 버튼  -->
+
+    <!--  하단 (홈, 정보 게시판 버튼)  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="65dp"
-
         android:orientation="horizontal"
         >
 
@@ -71,9 +71,11 @@
             android:textColor="@color/black"
             android:background="@color/whiteblue"
             android:id="@+id/btnHome"
+            android:drawableTop="@drawable/home"
             android:paddingTop="13dp"
             android:paddingBottom="13dp"
-            android:textSize="12sp"/>
+            android:textSize="12sp"
+            />
 
         <Button
             android:layout_width="wrap_content"
@@ -83,11 +85,13 @@
             android:textColor="@color/black"
             android:background="@color/whiteblue"
             android:id="@+id/btnInfo"
+            android:drawableTop="@drawable/infoxml"
             android:paddingTop="14dp"
             android:paddingBottom="12dp"
             android:textSize="12sp"/>
 
     </LinearLayout>
+
 
 
 </LinearLayout>
