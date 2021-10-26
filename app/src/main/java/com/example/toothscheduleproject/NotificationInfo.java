@@ -1,7 +1,9 @@
 package com.example.toothscheduleproject;
 
+import java.util.ArrayList;
+
 public class NotificationInfo {
-    private String time;
+    private String time;        // 알림시간
 
     public NotificationInfo() {
     }

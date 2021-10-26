@@ -4,27 +4,42 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Switch;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+
 public class Notification extends Activity {
 
+    private FirebaseAuth mFirebaseAuth;
+    private DatabaseReference mDatabaseRef;
+
     private NotificationInfo list;
-    private NotificationAdapter adapter;
+    private ArrayList<NotificationInfo> lstAlarmTime = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notification);
 
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("ToothSchedule");
+
         ImageButton ibtnBack = (ImageButton)findViewById(R.id.ibtnBack);
         Switch swAlarm = (Switch)findViewById(R.id.swAlarm);
         ImageButton ibtnAddAlarm = (ImageButton)findViewById(R.id.ibtnAddAlarm);
-        ListView lvAlarm = findViewById(R.id.lvAlarm);
+        ListView lvAlarm = (ListView) findViewById(R.id.lvAlarm);
 
-        adapter = new NotificationAdapter(Notification.this);
+        lstAlarmTime = new ArrayList<>();
+
+        NotificationAdapter adapter = new NotificationAdapter(Notification.this, R.layout.notification_item, lstAlarmTime);
         lvAlarm.setAdapter(adapter);
 
         swAlarm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -43,6 +58,16 @@ public class Notification extends Activity {
                             adapter.notifyDataSetChanged();
                         }
                     });
+
+                    // 아이템 클릭시 작동
+                    lvAlarm.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Intent intent = new Intent(getApplicationContext(), NotificationDetail.class);
+                            startActivity(intent);
+                        }
+                    });
+
                 } else {    // OFF일땐 알람 보이지 않음
                     ibtnAddAlarm.setVisibility(View.INVISIBLE);
                     lvAlarm.setVisibility(View.INVISIBLE);
