@@ -21,6 +21,7 @@ public class SurveyResultBad extends Activity {
                 startActivity(intent);
             }
         });
+
     }
 
 }

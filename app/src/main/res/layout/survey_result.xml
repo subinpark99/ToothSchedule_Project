@@ -20,8 +20,8 @@
         android:background="@drawable/round_button_style"/>
 
     <ImageView
-        android:id="@+id/ivbad"
-        android:layout_width="150dp"
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:src="@drawable/user"/>
@@ -39,7 +39,10 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:id="@+id/tvResult"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textColor="@color/black"/>
 
     <WebView
         android:layout_width="350dp"
