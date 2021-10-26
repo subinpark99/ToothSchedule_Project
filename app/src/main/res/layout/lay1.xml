@@ -6,19 +6,11 @@
     android:layout_width="370dp"
     android:layout_height="500dp"
     android:layout_marginStart="20dp"
-    android:layout_marginLeft="10dp"
     android:layout_marginTop="70dp"
     android:background="@color/wgray"
     android:orientation="vertical"
     tools:context=".Ex01Fragment" >
 
-    <TextView android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="1111"
-        android:textColor="@color/black"
-        android:textSize="30sp" />
 
 </LinearLayout>
 
