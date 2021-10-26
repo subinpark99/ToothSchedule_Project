@@ -10,15 +10,23 @@
         android:layout_height="40dp"
         android:id="@+id/tvTime"
         android:layout_weight="1"
-        android:text=""
+        android:text="여기야"
         android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
         />
 
     <ImageButton
-        android:layout_width="80dp"
+        android:layout_width="70dp"
         android:layout_height="40dp"
         android:background="@drawable/round_button_style"
         android:src="@drawable/notification_delete"
-        android:id="@+id/ibtnDeleteAlarm"/>
+        android:id="@+id/ibtnDeleteAlarm"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="8dp"
+       />
 
 </LinearLayout>

@@ -12,6 +12,7 @@ public class UserInfo {
     private String userName;    // 이름
     private String gender;      // 성별
     private String birth;       // 생년월일
+    private int surveySum;      // 설문조사 결과
 
     private ArrayList<ToothTimeInfo> lstToothTime; // 양치 시간 작성정보
 
@@ -71,5 +72,13 @@ public class UserInfo {
 
     public void setLstToothTime(ArrayList<ToothTimeInfo> lstToothTime) {
         this.lstToothTime = lstToothTime;
+    }
+
+    public int getSurveySum() {
+        return surveySum;
+    }
+
+    public void setSurveySum(int surveySum) {
+        this.surveySum = surveySum;
     }
 }

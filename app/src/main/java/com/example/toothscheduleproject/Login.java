@@ -57,7 +57,7 @@ public class Login extends Activity implements View.OnClickListener {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                // 로그인 성공, 로그인하면 설문조사 페이지로 넘어감
+                                // 로그인 성공, 로그인하면 메인 페이지로 넘어감
                                 Intent intent = new Intent(Login.this, MainActivity.class);
                                 startActivity(intent);
                                 finish(); // 현재 액티비티 파괴
