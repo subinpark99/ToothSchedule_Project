@@ -1,6 +1,7 @@
 package com.example.toothscheduleproject;
 
 import android.app.Activity;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,9 +11,11 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.Switch;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -23,13 +26,15 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Notification extends Activity implements View.OnClickListener{
+public class Notification extends Activity implements View.OnClickListener {
 
     private FirebaseAuth mFirebaseAuth;
     private DatabaseReference mDatabaseRef;
 
     NotificationAdapter adapter;
     private ArrayList<NotificationInfo> lstAlarmTime = null;
+
+    int hour=0, minute=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,9 +70,17 @@ public class Notification extends Activity implements View.OnClickListener{
                     lvAlarm.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Intent intent = new Intent(getApplicationContext(), NotificationDetail.class);
-                            intent.putExtra("title","title");
-                            startActivity(intent);
+
+                            TimePickerDialog timePicker = new TimePickerDialog
+                                    (Notification.this, android.R.style.Theme_Holo_Light_Dialog_NoActionBar ,new TimePickerDialog.OnTimeSetListener() {
+                                @Override
+                                public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+                                }
+
+                            },hour,minute,false);
+                            timePicker.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+                            timePicker.show();
                         }
                     });
 
@@ -97,13 +110,33 @@ public class Notification extends Activity implements View.OnClickListener{
                             userInfo = dataSnapshot.getValue(UserInfo.class);
                         }
                         if ( userInfo != null ) {
-                            NotificationInfo AlarmTime = new NotificationInfo();
+                            ArrayList<NotificationInfo> lstAlarmTimeInfo = userInfo.getLstAlarmTime();
+                            if (lstAlarmTimeInfo == null)
+                                lstAlarmTimeInfo = new ArrayList<>();
 
+                            int findIdx = 0;
+                            boolean isAlreadyExist = false; // 기존 데이터 존재하는지 체크 불리언
+                            for (int i = 0; i < lstAlarmTimeInfo.size(); i++) {
+                                if (lstAlarmTimeInfo.get(i).getTitle().equals(title)) {
+                                    isAlreadyExist = true;
+                                    findIdx = i;
+                                    break;
+                                }
+                            }
+                            NotificationInfo AlarmTime = new NotificationInfo();
                             AlarmTime.setTitle(title);
                             lstAlarmTime.add(AlarmTime);
                             adapter.notifyDataSetChanged();
+                            if (isAlreadyExist) {
+                                // update before exist data
+                                lstAlarmTimeInfo.set(findIdx, AlarmTime);
+                            }
+                            else {
+                                // new data
+                                lstAlarmTimeInfo.add(AlarmTime);
+                            }userInfo.setLstAlarmTime(lstAlarmTime);
                         }
-                        userInfo.setLstAlarmTime(lstAlarmTime);
+
 
                         // 서버 DB에 정보 Update
                         mDatabaseRef.child("UserInfo").child(mFirebaseAuth.getCurrentUser().getUid()).setValue(userInfo);
@@ -117,4 +150,5 @@ public class Notification extends Activity implements View.OnClickListener{
                 break;
         }
     }
+
 }
