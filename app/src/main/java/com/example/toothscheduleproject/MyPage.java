@@ -54,9 +54,6 @@ public class MyPage extends Activity {
 
                     tvID.setText(userId);
                     tvUserName.setText(userName);
-                } else{
-                    tvID.setVisibility(View.INVISIBLE);
-                    tvUserName.setVisibility(View.INVISIBLE);
                 }
             }
 
