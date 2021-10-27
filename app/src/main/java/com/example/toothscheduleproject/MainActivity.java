@@ -1,5 +1,6 @@
 package com.example.toothscheduleproject;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,12 +14,6 @@ import com.applandeo.materialcalendarview.CalendarView;
 import com.applandeo.materialcalendarview.EventDay;
 import com.applandeo.materialcalendarview.exceptions.OutOfDateRangeException;
 import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
-import com.example.toothscheduleproject.InfoBoard;
-import com.example.toothscheduleproject.MyPage;
-import com.example.toothscheduleproject.Notification;
-import com.example.toothscheduleproject.R;
-import com.example.toothscheduleproject.Schedule;
-import com.example.toothscheduleproject.ToothTimeInfo;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,7 +23,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -110,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<ToothTimeInfo> lstToothTime = new ArrayList<>(); // 서버 데이터 받아내는 배열
         mDatabaseRef.child("UserInfo").child(mFirebaseAuth.getCurrentUser().getUid()).child("lstToothTime").addListenerForSingleValueEvent(new ValueEventListener() {
+            @SuppressLint("RestrictedApi")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
@@ -117,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                     lstToothTime.add(toothTimeInfo);
                 }
 
+                HashMap<Long, Integer> map = new HashMap<>();
                 for (int i = 0; i < lstToothTime.size(); i++) {
                     String[] splitDate = lstToothTime.get(i).getDate().split("/");
                     int year = Integer.parseInt(splitDate[0]);
@@ -126,8 +126,33 @@ public class MainActivity extends AppCompatActivity {
                     calendar.set(Calendar.YEAR, year);
                     calendar.set(Calendar.MONTH, month);
                     calendar.set(Calendar.DAY_OF_MONTH, day);
+
                     events.add(new EventDay(calendar, R.drawable.dot));
+                    Long asd = events.get(i).getCalendar().getTimeInMillis();
+                    Integer count = map.get(asd);
+                    if (count == null)
+                        map.put(asd, 1);
+                    else
+                        map.put(asd, count + 1);
+
                 }
+
+                // check count for same day data
+                for (int i = 0; i < events.size(); i++) {
+                    for (Map.Entry<Long, Integer> entry : map.entrySet()) {
+                        if (events.get(i).getCalendar().getTimeInMillis() == entry.getKey()) {
+                            if (entry.getValue() == 2) {
+                                events.set(i, new EventDay(events.get(i).getCalendar(), R.drawable.dot_2));
+                            } else if (entry.getValue() == 3) {
+                                events.set(i, new EventDay(events.get(i).getCalendar(), R.drawable.dot_3));
+                            } else {
+                                events.set(i, new EventDay(events.get(i).getCalendar(), R.drawable.dot));
+                            }
+                        }
+                    }
+                }
+
+
 
                 mCalendarView.setEvents(events);
             }
