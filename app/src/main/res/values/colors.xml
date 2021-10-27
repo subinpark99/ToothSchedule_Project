@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="whiteblue">#FFB8E0FF</color>
     <color name="blue">#a8e0ff</color>
-    <color name="wgray">#F3F3F3</color>
+    <color name="wgray">#F9f9f9</color>
+    <color name="zingray">#5f5f5f</color>
     <color name="olive">#3b5998</color>
 </resources>

@@ -10,33 +10,215 @@
     android:orientation="vertical"
     tools:context=".Ex05Fragment">
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:scrollbarThumbVertical="@color/whiteblue"
+        android:scrollbarFadeDuration = "0"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txtTitle5"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginStart="90dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="30dp"
-            android:text="거울보며 체크하기"
-            android:textColor="@color/olive"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txtmirror"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:text="  치아를 닦을때는 거울을 보면서 칫솔이 어느 부위를 닦아주고 있는지 정확히 보면서 움직여야한다. 대충 느낌만으로 양치질하면 치아와 잇몸사이를 닦아주고 있는지 알기 어렵다. 거울을 가까이 보면서 치아 손상이 생겼는지 잇몸이 붓거나 이상한 곳은 없는지 한번 점검하는 것이 좋다."/>
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/txtTitle2"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="90dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="30dp"
+                android:text="치아에 나쁜 음식"
+                android:textColor="@color/zingray"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtsan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:textSize="17sp"
+                android:text="1. 산성 식품"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/txtdang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="270dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:textSize="17sp"
+                android:text="2. 당분/ 점성이 높은 식품"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/txtdan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="400dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:textSize="17sp"
+                android:text="3. 단단한 음식"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/txtsul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="550dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:textSize="17sp"
+                android:text="4. 주류"
+                android:textStyle="bold"
+                />
+
+
+            <TextView
+                android:id="@+id/san"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="110dp"
+                android:layout_marginEnd="15dp"
+                android:text=" 치아 에나멜층은 산도 pH 5.5 이상에서 파괴되기 시작한다. 산성 음식을 먹은 뒤에는 치아에 손상이 가게 된다. 치약 속의 연마제는 탄산음료와 만나면 치아를 부식시키므로 섭취 30분 이후 꼼꼼하게 양치질을 해야 한다."
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/dang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="300dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:textSize="15sp"
+                android:text=" 끈적이면서 단맛을 내는 음식은 입안에 오래 남아 잘 닦이지 않아 충치를 유발하기 쉽다. "/>
+
+            <TextView
+                android:id="@+id/hang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="430dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:textSize="15sp"
+                android:text=" 치아 표면에 손상을 가게하며, 심한 경우 치아가 부서질 수 있다.
+ "
+                />
+
+            <TextView
+                android:id="@+id/hang2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="580dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="20dp"
+                android:textSize="15sp"
+                android:text=" 술은 곡류 등을 발효시키기 때문에 당분이 함유되어 있어 많이 마시면 충치가 유발된다. 높은 도수의 술일수록 잇몸에 가해지는 자극이 커져 치아가 약해지기 쉽다.
+
+ "
+                />
+
+
+            <ImageView
+                android:id="@+id/cola"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="220dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/cola" />
+
+            <ImageView
+                android:id="@+id/lemon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="220dp"
+                android:layout_marginStart="55dp"
+                android:src="@drawable/lemon" />
+
+            <ImageView
+                android:id="@+id/cake"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="350dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/cake" />
+
+            <ImageView
+                android:id="@+id/cotton"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="350dp"
+                android:layout_marginStart="55dp"
+                android:src="@drawable/cottom" />
+
+            <ImageView
+                android:id="@+id/choco"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="350dp"
+                android:layout_marginStart="95dp"
+                android:src="@drawable/choco" />
+
+            <ImageView
+                android:id="@+id/honey"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="350dp"
+                android:layout_marginStart="135dp"
+                android:src="@drawable/honey" />
+
+            <ImageView
+                android:id="@+id/peanut"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="480dp"
+                android:src="@drawable/peanut" />
+            <ImageView
+                android:id="@+id/nut"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="480dp"
+                android:src="@drawable/nut" />
+
+            <ImageView
+                android:id="@+id/beer"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="670dp"
+                android:src="@drawable/beer" />
+
+            <ImageView
+                android:id="@+id/cocktail"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="670dp"
+                android:src="@drawable/cocktail" />
+
+            <ImageView
+                android:id="@+id/wine"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="95dp"
+                android:layout_marginTop="670dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/wine" />
+
+
+
+        </RelativeLayout>
+    </ScrollView>
 </LinearLayout>

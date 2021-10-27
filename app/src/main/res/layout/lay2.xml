@@ -21,11 +21,11 @@
             android:id="@+id/txtTitle2"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:layout_marginStart="70dp"
+            android:layout_marginStart="80dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="30dp"
             android:text="칫솔에 물 묻히지 않기"
-            android:textColor="@color/olive"
+            android:textColor="@color/zingray"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -33,12 +33,56 @@
             android:id="@+id/txtwater"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="80dp"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:textStyle="bold"
             android:textSize="15sp"
             android:text="  치약에 들어있는 연마제는 물이 닿으면 희석되는 성분이기 때문에 농도가 낮아지면서 연마 효과가 떨어진다. 마찬가지로 충치를 예방하는 불소 성분도 물과 닿아 희석되면 효과가 떨어진다. 거품이 생기면 더 상쾌하고 깨끗하게 닦이는 느낌이 들겠지만, 오히려 입안에 거품이 많이 생겨서 충분한 시간동안 양치질하지 않는 경우가 많다. 그러니 가급적이면 물을 묻히지 말고 치약만 묻혀 바로 양치하자."
             />
+
+        <TextView
+            android:id="@+id/txtTitle4"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="280dp"
+            android:layout_marginEnd="30dp"
+            android:text="혀도 꼼꼼히 닦기"
+            android:textColor="@color/zingray"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="335dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:textSize="15sp"
+            android:text="  입 냄새가 심하게 난다고 느껴지면 양치질할 때 혀 안쪽을 잘 닦아야한다. 목구멍과 가까운 혀 안쪽은 하얗게 설태가 끼어있는데, 세균이 설태에 포함된 단백질과 펩타이드를 분해해 입 냄새를 만들기 때문이다. 하지만 설태를 없애자고 뻣뻣한 칫솔로 빡빡 닦으면 혀에 상처가 날 수 있으니 혀클리너로 부드럽게 닦아야한다. "/>
+
+
+
+        <ImageView
+            android:id="@+id/ck2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="40dp"
+            android:src="@drawable/ck" />
+
+
+        <ImageView
+            android:id="@+id/ck3"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="280dp"
+            android:layout_marginStart="55dp"
+            android:src="@drawable/ck" />
+
+
+
+
     </RelativeLayout>
 </LinearLayout>
