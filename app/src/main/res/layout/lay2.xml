@@ -56,11 +56,11 @@
             android:id="@+id/hue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="335dp"
             android:layout_marginStart="15dp"
+            android:layout_marginTop="335dp"
             android:layout_marginEnd="15dp"
-            android:textSize="15sp"
-            android:text="  입 냄새가 심하게 난다고 느껴지면 양치질할 때 혀 안쪽을 잘 닦아야한다. 목구멍과 가까운 혀 안쪽은 하얗게 설태가 끼어있는데, 세균이 설태에 포함된 단백질과 펩타이드를 분해해 입 냄새를 만들기 때문이다. 하지만 설태를 없애자고 뻣뻣한 칫솔로 빡빡 닦으면 혀에 상처가 날 수 있으니 혀클리너로 부드럽게 닦아야한다. "/>
+            android:text="  입 냄새가 심하게 난다고 느껴지면 양치질할 때 혀 안쪽을 잘 닦아야한다. 목구멍과 가까운 혀 안쪽은 하얗게 설태가 끼어있는데, 세균이 설태에 포함된 단백질과 펩타이드를 분해해 입 냄새를 만들기 때문이다. 하지만 설태를 없애자고 뻣뻣한 칫솔로 빡빡 닦으면 혀에 상처가 날 수 있으니 혀클리너로 부드럽게 닦아야한다. "
+            android:textSize="15sp" />
 
 
 
