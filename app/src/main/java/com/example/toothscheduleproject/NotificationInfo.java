@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class NotificationInfo {
     private String title;       // 알림이름
     private String time;        // 알림시간
+    private int hour;
+    private int minute;
 
     public NotificationInfo() {
     }
@@ -27,5 +29,21 @@ public class NotificationInfo {
 
     public NotificationInfo(String time) {
         this.time = time;
+    }
+
+    public int getHour() {
+        return hour;
+    }
+
+    public void setHour(int hour) {
+        this.hour = hour;
+    }
+
+    public int getMinute() {
+        return minute;
+    }
+
+    public void setMinute(int minute) {
+        this.minute = minute;
     }
 }

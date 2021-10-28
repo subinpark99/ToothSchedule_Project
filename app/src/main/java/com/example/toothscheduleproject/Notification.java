@@ -66,7 +66,7 @@ public class Notification extends Activity implements View.OnClickListener {
                     ibtnAddAlarm.setVisibility(View.VISIBLE);
                     lvAlarm.setVisibility(View.VISIBLE);
 
-                    // 아이템 클릭시 작동
+                    // 아이템 클릭시 시간 설정창 보여줌
                     lvAlarm.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -134,7 +134,7 @@ public class Notification extends Activity implements View.OnClickListener {
                             else {
                                 // new data
                                 lstAlarmTimeInfo.add(AlarmTime);
-                            }userInfo.setLstAlarmTime(lstAlarmTime);
+                            } userInfo.setLstAlarmTime(lstAlarmTime);
                         }
 
 

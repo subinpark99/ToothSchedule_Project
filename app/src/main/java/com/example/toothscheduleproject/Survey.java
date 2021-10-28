@@ -8,7 +8,21 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import androidx.annotation.NonNull;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+
 public class Survey extends Activity {
+
+    private FirebaseAuth mFirebaseAuth;     // 파이어베이스 인증
+    private DatabaseReference mDatabaseRef; // 실시간 데이터베이스
 
     //전역변수로 라디오버튼 결과값을 받을 함수 선언언
     int result1, result2, result3, result4, result5;
@@ -18,6 +32,9 @@ public class Survey extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.survey);
+
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("ToothSchedule");
 
         Button btnSubmit = (Button) findViewById(R.id.btnSubmit);
         RadioGroup rg1 = (RadioGroup) findViewById(R.id.radiogroup1);
@@ -117,10 +134,32 @@ public class Survey extends Activity {
 
 
 
-        //점수 총합이 12점 이하이면 치과추천으로 넘어감
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // 점수결과 DB에 저장
+                mDatabaseRef.child("UserInfo").orderByChild("idToken").equalTo(mFirebaseAuth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        UserInfo userInfo = null;
+
+                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                            userInfo = dataSnapshot.getValue(UserInfo.class);
+                        }
+                        if ( userInfo != null ) {
+                            userInfo.setSurveySum(result1+result2 + result3 + result4 + result5);
+                        }
+                        mDatabaseRef.child("UserInfo").child(mFirebaseAuth.getCurrentUser().getUid()).setValue(userInfo);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                    }
+                });
+
+                //점수 총합이 12점 이하이면 치과추천으로 넘어감
                 if (result1 + result2 + result3 + result4 + result5 <= 12) {
                     Intent intent = new Intent(getApplicationContext(), SurveyResultBad.class);
                     startActivity(intent);
