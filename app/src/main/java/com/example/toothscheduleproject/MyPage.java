@@ -53,9 +53,19 @@ public class MyPage extends Activity {
                 if ( userInfo != null ) {
                     String userId = userInfo.getEmailId();
                     String userName = userInfo.getUserName();
+                    int surveysum = userInfo.getSurveySum();
 
                     tvID.setText(userId);
                     tvUserName.setText(userName);
+
+                    if(surveysum <= 12){
+                        ivUser.setImageResource(R.drawable.bad);
+                    }
+                    else if(surveysum <= 19){
+                        ivUser.setImageResource(R.drawable.soso);
+                    }
+                    else
+                        ivUser.setImageResource(R.drawable.good);
                 }
             }
 
