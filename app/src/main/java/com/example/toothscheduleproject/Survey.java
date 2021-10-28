@@ -19,19 +19,26 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Survey extends Activity {
 
     private FirebaseAuth mFirebaseAuth;     // 파이어베이스 인증
     private DatabaseReference mDatabaseRef; // 실시간 데이터베이스
 
     //전역변수로 라디오버튼 결과값을 받을 함수 선언언
-    int result1, result2, result3, result4, result5;
+    private int result1, result2, result3, result4, result5;
+    private int sum;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.survey);
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("ToothSchedule");
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("ToothSchedule");
@@ -139,6 +146,8 @@ public class Survey extends Activity {
             @Override
             public void onClick(View v) {
 
+                sum = result1 + result2 + result3 + result4 + result5;
+
                 // 점수결과 DB에 저장
                 mDatabaseRef.child("UserInfo").orderByChild("idToken").equalTo(mFirebaseAuth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -149,7 +158,7 @@ public class Survey extends Activity {
                             userInfo = dataSnapshot.getValue(UserInfo.class);
                         }
                         if ( userInfo != null ) {
-                            userInfo.setSurveySum(result1+result2 + result3 + result4 + result5);
+                            userInfo.setSurveySum(sum);
                         }
                         mDatabaseRef.child("UserInfo").child(mFirebaseAuth.getCurrentUser().getUid()).setValue(userInfo);
                     }
@@ -160,12 +169,14 @@ public class Survey extends Activity {
                 });
 
                 //점수 총합이 12점 이하이면 치과추천으로 넘어감
-                if (result1 + result2 + result3 + result4 + result5 <= 12) {
+
+
+                if (sum <= 12) {
                     Intent intent = new Intent(getApplicationContext(), SurveyResultBad.class);
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(getApplicationContext(), SurveyResult.class);
-                    intent.putExtra("sum",result1 + result2 + result3 + result4 + result5);
+                    intent.putExtra("sum",sum);
                     startActivity(intent);
                 }
 

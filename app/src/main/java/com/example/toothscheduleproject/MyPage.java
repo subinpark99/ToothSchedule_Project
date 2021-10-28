@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +36,7 @@ public class MyPage extends Activity {
         Button btnAppVer=(Button) findViewById(R.id.btnAppVer);
         TextView tvID = findViewById(R.id.tvID);
         TextView tvUserName = findViewById(R.id.tvUserName);
+        ImageView ivUser = findViewById(R.id.ivUser);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("ToothSchedule");

@@ -31,7 +31,7 @@
             android:layout_height="60dp"
             android:layout_marginLeft="70dp"
             android:gravity="center"
-            android:src="@drawable/user"/>
+            android:src="@drawable/user" />
 
         <TextView
             android:id="@+id/tvUserName"
