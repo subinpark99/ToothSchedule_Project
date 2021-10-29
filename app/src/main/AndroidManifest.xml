@@ -49,6 +49,7 @@
         <activity android:name=".SurveyResult"/>
         <activity android:name=".SurveyResultBad"/>
 
+
         <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCMxXCKcm0yX8D-VVC8PR2XFGspiF-D_I4"/>
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
     </application>

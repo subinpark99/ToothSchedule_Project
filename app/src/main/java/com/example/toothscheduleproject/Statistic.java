@@ -51,23 +51,17 @@ public class Statistic extends Activity {
                 if ( userInfo != null ) {
 
                     ArrayList try_brush = userInfo.getLstToothTime();
-                    float count = try_brush.size();
-                    String day = toothTimeInfo.getDate();
-                    tvAvgCount.setText("현재 양치 횟수는 : " + (count) + "회");
+                    int count = try_brush.size();
+                    if(count != 0) {
+                        tvAvgCount.setText("현재 양치 횟수는 : " + (count) + "회");
+                    }
                 }
-                else
-                    tvAvgCount.setText("현재 양치 횟수는 : 0회");
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
-
-
-
 
         ibtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
