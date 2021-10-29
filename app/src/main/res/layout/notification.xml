@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 <!--  알림 설정을 할 수 있는 On/Off페이지  -->
-    <!--  10.02 (수정)-->
 
 <!--  상단  -->
     <RelativeLayout
@@ -56,21 +55,40 @@
 
     </RelativeLayout>
 
-    <ListView
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/lvAlarm">
+        android:layout_height="2dp"
+        android:background="@color/whiteblue"/>
 
-    </ListView>
 
-    <ImageButton
-        android:layout_width="380dp"
-        android:layout_height="40dp"
-        android:src="@drawable/add"
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/btnMorning"
         android:background="@drawable/round_button_style"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/ibtnAddAlarm"
-        android:visibility="invisible"
-        />
+        android:layout_marginTop="16dp"
+        android:text="알람1"
+        android:visibility="invisible"/>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/btnLunch"
+        android:background="@drawable/round_button_style"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="알람1"
+        android:visibility="invisible"/>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/btnEvening"
+        android:background="@drawable/round_button_style"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:text="알람1"
+        android:visibility="invisible"/>
 
 </LinearLayout>
