@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +36,7 @@ public class MyPage extends Activity {
         Button btnAppVer=(Button) findViewById(R.id.btnAppVer);
         TextView tvID = findViewById(R.id.tvID);
         TextView tvUserName = findViewById(R.id.tvUserName);
+        ImageView ivUser = findViewById(R.id.ivUser);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("ToothSchedule");
@@ -51,9 +53,19 @@ public class MyPage extends Activity {
                 if ( userInfo != null ) {
                     String userId = userInfo.getEmailId();
                     String userName = userInfo.getUserName();
+                    int surveysum = userInfo.getSurveySum();
 
                     tvID.setText(userId);
                     tvUserName.setText(userName);
+
+                    if(surveysum <= 12){
+                        ivUser.setImageResource(R.drawable.bad);
+                    }
+                    else if(surveysum <= 19){
+                        ivUser.setImageResource(R.drawable.soso);
+                    }
+                    else
+                        ivUser.setImageResource(R.drawable.good);
                 }
             }
 
