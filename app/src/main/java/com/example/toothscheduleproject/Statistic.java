@@ -53,11 +53,10 @@ public class Statistic extends Activity {
                     ArrayList try_brush = userInfo.getLstToothTime();
                     float count = try_brush.size();
                     String day = toothTimeInfo.getDate();
-
-
-                    tvAvgCount.setText("현재 양치 횟수는 : " + (count));
-
+                    tvAvgCount.setText("현재 양치 횟수는 : " + (count) + "회");
                 }
+                else
+                    tvAvgCount.setText("현재 양치 횟수는 : 0회");
 
             }
 
