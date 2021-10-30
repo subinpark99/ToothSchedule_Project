@@ -2,20 +2,15 @@ package com.example.toothscheduleproject;
 
 import android.app.Activity;
 import android.app.TimePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
-import android.widget.ListView;
-import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.DialogFragment;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -31,10 +26,8 @@ public class Notification extends Activity implements View.OnClickListener {
     private FirebaseAuth mFirebaseAuth;
     private DatabaseReference mDatabaseRef;
 
-    NotificationAdapter adapter;
-    private ArrayList<NotificationInfo> lstAlarmTime = null;
-
-    int hour=0, minute=0;
+    String alarmTitle;
+    int hour=9, minutes=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,112 +36,118 @@ public class Notification extends Activity implements View.OnClickListener {
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("ToothSchedule");
+
         ImageButton ibtnBack = findViewById(R.id.ibtnBack);
-        ImageButton ibtnAddAlarm = findViewById(R.id.ibtnAddAlarm);
+        Button btnMorning = findViewById(R.id.btnMorning);
+        Button btnLunch = findViewById(R.id.btnLunch);
+        Button btnEvening = findViewById(R.id.btnEvening);
 
         Switch swAlarm = (Switch)findViewById(R.id.swAlarm);
-        ListView lvAlarm = (ListView) findViewById(R.id.lvAlarm);
 
         ibtnBack.setOnClickListener(this);
-        ibtnAddAlarm.setOnClickListener(this);
-
-        lstAlarmTime = new ArrayList<>();
-
-        // Adapter 생성
-        adapter = new NotificationAdapter(Notification.this, R.layout.notification_item, lstAlarmTime);
-        lvAlarm.setAdapter(adapter);
+        btnMorning.setOnClickListener(this);
+        btnLunch.setOnClickListener(this);
+        btnEvening.setOnClickListener(this);
 
         swAlarm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // ON일때 알람보여줌
                 if(isChecked) {
-                    ibtnAddAlarm.setVisibility(View.VISIBLE);
-                    lvAlarm.setVisibility(View.VISIBLE);
-
-                    // 아이템 클릭시 시간 설정창 보여줌
-                    lvAlarm.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                            TimePickerDialog timePicker = new TimePickerDialog
-                                    (Notification.this, android.R.style.Theme_Holo_Light_Dialog_NoActionBar ,new TimePickerDialog.OnTimeSetListener() {
-                                @Override
-                                public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-
-                                }
-
-                            },hour,minute,false);
-                            timePicker.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-                            timePicker.show();
-                        }
-                    });
-
+                    btnMorning.setVisibility(View.VISIBLE);
+                    btnLunch.setVisibility(View.VISIBLE);
+                    btnEvening.setVisibility(View.VISIBLE);
                 } else {    // OFF일땐 알람 보이지 않음
-                    ibtnAddAlarm.setVisibility(View.INVISIBLE);
-                    lvAlarm.setVisibility(View.INVISIBLE);
+                    btnMorning.setVisibility(View.INVISIBLE);
+                    btnLunch.setVisibility(View.INVISIBLE);
+                    btnEvening.setVisibility(View.INVISIBLE);
                 }
             }
         });
     }
 
-
+    //버튼 별 처리
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.ibtnBack:
+            case R.id.ibtnBack:     // 뒤로가기 버튼
                 finish();
                 break;
-            case R.id.ibtnAddAlarm:         // 리스트뷰 추가
-                String title = "알람";
-                mDatabaseRef.child("UserInfo").orderByChild("idToken").equalTo(mFirebaseAuth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        UserInfo userInfo = null;
-
-                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                            userInfo = dataSnapshot.getValue(UserInfo.class);
-                        }
-                        if ( userInfo != null ) {
-                            ArrayList<NotificationInfo> lstAlarmTimeInfo = userInfo.getLstAlarmTime();
-                            if (lstAlarmTimeInfo == null)
-                                lstAlarmTimeInfo = new ArrayList<>();
-
-                            int findIdx = 0;
-                            boolean isAlreadyExist = false; // 기존 데이터 존재하는지 체크 불리언
-                            for (int i = 0; i < lstAlarmTimeInfo.size(); i++) {
-                                if (lstAlarmTimeInfo.get(i).getTitle().equals(title)) {
-                                    isAlreadyExist = true;
-                                    findIdx = i;
-                                    break;
-                                }
-                            }
-                            NotificationInfo AlarmTime = new NotificationInfo();
-                            AlarmTime.setTitle(title);
-                            lstAlarmTime.add(AlarmTime);
-                            adapter.notifyDataSetChanged();
-                            if (isAlreadyExist) {
-                                // update before exist data
-                                lstAlarmTimeInfo.set(findIdx, AlarmTime);
-                            }
-                            else {
-                                // new data
-                                lstAlarmTimeInfo.add(AlarmTime);
-                            } userInfo.setLstAlarmTime(lstAlarmTime);
-                        }
-
-
-                        // 서버 DB에 정보 Update
-                        mDatabaseRef.child("UserInfo").child(mFirebaseAuth.getCurrentUser().getUid()).setValue(userInfo);
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
+            case R.id.btnMorning:
+                alarmTitle="first";
+                timePick(alarmTitle);
                 break;
+            case R.id.btnLunch:
+                alarmTitle="second";
+                timePick(alarmTitle);
+                break;
+            case R.id.btnEvening:
+                alarmTitle="third";
+                timePick(alarmTitle);
+                break;
+
         }
     }
+
+    // 시간 설정
+    public void timePick(String title){
+        TimePickerDialog timePicker = new TimePickerDialog
+                (Notification.this, android.R.style.Theme_Holo_Light_Dialog_NoActionBar ,new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+
+                        // 설정 시간 DB에 저장
+                        mDatabaseRef.child("UserInfo").orderByChild("idToken").equalTo(mFirebaseAuth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                UserInfo userInfo = null;
+                                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                                    userInfo = dataSnapshot.getValue(UserInfo.class);
+                                }
+                                if (userInfo != null) {
+                                    ArrayList<NotificationInfo> lstAlarmTimeInfo = userInfo.getLstAlarmTime();
+                                    if (lstAlarmTimeInfo == null)
+                                        lstAlarmTimeInfo = new ArrayList<>();
+
+                                    int findIdx = 0;
+                                    boolean isAlreadyExist = false; // 기존 데이터 존재하는지 체크 불리언
+                                    for (int i = 0; i < lstAlarmTimeInfo.size(); i++) {
+                                        // 기존 서버 db에서 기록 날짜와, 시간 타입까지 같이 일치하는 데이터가 있는지 검사한다.
+                                        if (lstAlarmTimeInfo.get(i).getTitle().equals(title)) {
+                                            isAlreadyExist = true;
+                                            findIdx = i;
+                                            break;
+                                        }
+                                    }
+
+                                    NotificationInfo alarmTimeInfo = new NotificationInfo();
+                                    alarmTimeInfo.setTitle(title);
+                                    alarmTimeInfo.setHour(hourOfDay);
+                                    alarmTimeInfo.setMinute(minute);
+                                    if (isAlreadyExist) {
+                                        // update before exist data
+                                        lstAlarmTimeInfo.set(findIdx, alarmTimeInfo);
+                                    } else{
+                                        lstAlarmTimeInfo.add(alarmTimeInfo);
+                                    }
+                                    userInfo.setLstAlarmTime(lstAlarmTimeInfo);
+                                }
+                                // 서버 DB에 정보 Update
+                                mDatabaseRef.child("UserInfo").child(mFirebaseAuth.getCurrentUser().getUid()).setValue(userInfo);
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+
+                    }
+                },hour,minutes,false);
+        timePicker.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        timePicker.show();
+
+    }
+
 
 }

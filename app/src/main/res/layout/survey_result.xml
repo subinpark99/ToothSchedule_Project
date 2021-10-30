@@ -30,26 +30,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="18sp"
-        android:layout_marginTop="16dp"
+        android:textSize="23dp"
+        android:layout_marginTop="10dp"
         android:text="당신의 치아 상태는"
         android:textColor="@color/black"/>
 
     <TextView
+        android:layout_marginTop="20dp"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:id="@+id/tvResult"
         android:layout_gravity="center"
+        android:gravity="center"
         android:textAlignment="center"
-        android:textSize="16sp"
-        android:textColor="@color/black"/>
+        android:textSize="19dp"
+        android:textColor="@color/black"
+        android:background="@color/whiteblue"/>
 
     <TextView
+        android:id="@+id/tvComment"
         android:layout_width="350dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_gravity="center"
         android:layout_height="200dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="19dp"
+        android:textColor="@color/black">
     </TextView>
 
     <Button
