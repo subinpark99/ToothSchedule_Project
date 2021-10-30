@@ -91,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:textSize="16dp"
+        android:textSize="20dp"
         android:text="- 양치 시간"
         android:textColor="@color/black"/>
 
@@ -100,7 +100,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginBottom="30dp">
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="10dp">
 
         <RadioGroup
             android:id="@+id/rg_brush_time"
@@ -111,6 +112,7 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:layout_weight="1"
                 android:text="1분 30초 미만"/>
 
@@ -118,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:textSize="12sp"
+                android:textSize="12dp"
                 android:text="1분 30초 이상\n3분 미만"/>
 
             <RadioButton
@@ -156,7 +158,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:textSize="16dp"
+        android:textSize="20dp"
         android:text="- 식후 양치 시간"
         android:textColor="@color/black"/>
 
@@ -165,6 +167,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="30dp">
 
         <RadioGroup
@@ -220,7 +223,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:textSize="16dp"
+        android:textSize="20dp"
         android:text="- 구강 보조 기구 사용"
         android:textColor="@color/black"/>
 
@@ -229,6 +232,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="30dp">
 
         <RadioGroup

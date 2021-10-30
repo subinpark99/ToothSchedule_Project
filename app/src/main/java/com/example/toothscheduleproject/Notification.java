@@ -27,7 +27,7 @@ public class Notification extends Activity implements View.OnClickListener {
     private DatabaseReference mDatabaseRef;
 
     String alarmTitle;
-    int hour=9, minutes=0;
+    int hour = 9, minutes = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class Notification extends Activity implements View.OnClickListener {
         Button btnLunch = findViewById(R.id.btnLunch);
         Button btnEvening = findViewById(R.id.btnEvening);
 
-        Switch swAlarm = (Switch)findViewById(R.id.swAlarm);
+        Switch swAlarm = (Switch) findViewById(R.id.swAlarm);
 
         ibtnBack.setOnClickListener(this);
         btnMorning.setOnClickListener(this);
@@ -53,10 +53,11 @@ public class Notification extends Activity implements View.OnClickListener {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 // ON일때 알람보여줌
-                if(isChecked) {
+                if (isChecked) {
                     btnMorning.setVisibility(View.VISIBLE);
                     btnLunch.setVisibility(View.VISIBLE);
                     btnEvening.setVisibility(View.VISIBLE);
+
                 } else {    // OFF일땐 알람 보이지 않음
                     btnMorning.setVisibility(View.INVISIBLE);
                     btnLunch.setVisibility(View.INVISIBLE);
@@ -74,15 +75,15 @@ public class Notification extends Activity implements View.OnClickListener {
                 finish();
                 break;
             case R.id.btnMorning:
-                alarmTitle="first";
+                alarmTitle = "first";
                 timePick(alarmTitle);
                 break;
             case R.id.btnLunch:
-                alarmTitle="second";
+                alarmTitle = "second";
                 timePick(alarmTitle);
                 break;
             case R.id.btnEvening:
-                alarmTitle="third";
+                alarmTitle = "third";
                 timePick(alarmTitle);
                 break;
 
@@ -90,9 +91,9 @@ public class Notification extends Activity implements View.OnClickListener {
     }
 
     // 시간 설정
-    public void timePick(String title){
+    public void timePick(String title) {
         TimePickerDialog timePicker = new TimePickerDialog
-                (Notification.this, android.R.style.Theme_Holo_Light_Dialog_NoActionBar ,new TimePickerDialog.OnTimeSetListener() {
+                (Notification.this, android.R.style.Theme_Holo_Light_Dialog_NoActionBar, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 
@@ -127,11 +128,12 @@ public class Notification extends Activity implements View.OnClickListener {
                                     if (isAlreadyExist) {
                                         // update before exist data
                                         lstAlarmTimeInfo.set(findIdx, alarmTimeInfo);
-                                    } else{
+                                    } else {
                                         lstAlarmTimeInfo.add(alarmTimeInfo);
                                     }
                                     userInfo.setLstAlarmTime(lstAlarmTimeInfo);
                                 }
+
                                 // 서버 DB에 정보 Update
                                 mDatabaseRef.child("UserInfo").child(mFirebaseAuth.getCurrentUser().getUid()).setValue(userInfo);
                             }
@@ -143,11 +145,11 @@ public class Notification extends Activity implements View.OnClickListener {
                         });
 
                     }
-                },hour,minutes,false);
+                }, hour, minutes, false);
         timePicker.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         timePicker.show();
 
-    }
 
+    }
 
 }

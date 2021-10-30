@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -17,12 +16,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class Survey extends Activity {
 
@@ -192,7 +185,7 @@ public class Survey extends Activity {
 
 
                 if (sum <= 12) {
-                    Intent intent = new Intent(getApplicationContext(), SurveyResultBad.class);
+                    Intent intent = new Intent(getApplicationContext(), SurveyResultBadBad.class);
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(getApplicationContext(), SurveyResult.class);
