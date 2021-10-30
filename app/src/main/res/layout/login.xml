@@ -20,7 +20,7 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
-        android:hint="ID"
+        android:hint="Email"
         android:id="@+id/edtID" />
 
 <!--  패스워드 입력란  -->
