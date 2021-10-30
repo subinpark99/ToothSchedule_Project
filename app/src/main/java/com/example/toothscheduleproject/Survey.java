@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -147,6 +148,25 @@ public class Survey extends Activity {
             public void onClick(View v) {
 
                 sum = result1 + result2 + result3 + result4 + result5;
+
+               result1= rg1.indexOfChild(findViewById(rg1.getCheckedRadioButtonId()));
+                result2= rg2.indexOfChild(findViewById(rg2.getCheckedRadioButtonId()));
+                result3= rg3.indexOfChild(findViewById(rg3.getCheckedRadioButtonId()));
+                result4= rg4.indexOfChild(findViewById(rg4.getCheckedRadioButtonId()));
+                result5= rg5.indexOfChild(findViewById(rg5.getCheckedRadioButtonId()));
+                if(result1 == -1 || result2 == -1 || result3 == -1|| result5 == -1|| result5 == -1) {
+                    // 선택된 날씨가 없음
+                    Toast toast = Toast.makeText(getApplicationContext(), "선택 옵션을 모두 선택해주세요!", Toast.LENGTH_LONG);
+                   toast.show();
+                    return;
+                }
+
+
+
+
+
+
+
 
                 // 점수결과 DB에 저장
                 mDatabaseRef.child("UserInfo").orderByChild("idToken").equalTo(mFirebaseAuth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
