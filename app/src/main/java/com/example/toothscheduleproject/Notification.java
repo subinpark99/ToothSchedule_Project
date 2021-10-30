@@ -1,16 +1,25 @@
 package com.example.toothscheduleproject;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -20,6 +29,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class Notification extends Activity implements View.OnClickListener {
 
@@ -95,6 +105,9 @@ public class Notification extends Activity implements View.OnClickListener {
                 (Notification.this, android.R.style.Theme_Holo_Light_Dialog_NoActionBar ,new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        Calendar c = Calendar.getInstance();
+                        c.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                        c.set(Calendar.MINUTE, minute);
 
                         // 설정 시간 DB에 저장
                         mDatabaseRef.child("UserInfo").orderByChild("idToken").equalTo(mFirebaseAuth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -124,16 +137,22 @@ public class Notification extends Activity implements View.OnClickListener {
                                     alarmTimeInfo.setTitle(title);
                                     alarmTimeInfo.setHour(hourOfDay);
                                     alarmTimeInfo.setMinute(minute);
+//                                    c.set(Calendar.HOUR_OF_DAY, alarmTimeInfo.getHour());
+//                                    c.set(Calendar.MINUTE, alarmTimeInfo.getMinute());
                                     if (isAlreadyExist) {
-                                        // update before exist data
+                                        // 데이터가 이미 존재하면 업데이트
                                         lstAlarmTimeInfo.set(findIdx, alarmTimeInfo);
+                                        Toast.makeText(Notification.this, "알림 시간이 변경되었습니다.", Toast.LENGTH_SHORT).show();
                                     } else{
+                                        // 없다면 새로 알람을 맞춰준다.
                                         lstAlarmTimeInfo.add(alarmTimeInfo);
                                     }
                                     userInfo.setLstAlarmTime(lstAlarmTimeInfo);
                                 }
                                 // 서버 DB에 정보 Update
                                 mDatabaseRef.child("UserInfo").child(mFirebaseAuth.getCurrentUser().getUid()).setValue(userInfo);
+
+                                Toast.makeText(Notification.this, "알림이 설정되었습니다.", Toast.LENGTH_SHORT).show();
                             }
 
                             @Override
@@ -142,11 +161,22 @@ public class Notification extends Activity implements View.OnClickListener {
                             }
                         });
 
+                        // 알림 시작
+                        startAlarm(c);
                     }
                 },hour,minutes,false);
         timePicker.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         timePicker.show();
 
+
+    }
+
+    private void startAlarm(Calendar c) {
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, AlertReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
+
+        alarmManager.cancel(pendingIntent);
     }
 
 
