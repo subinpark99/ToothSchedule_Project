@@ -152,6 +152,8 @@ public class Notification extends Activity implements View.OnClickListener {
                                 // 서버 DB에 정보 Update
                                 mDatabaseRef.child("UserInfo").child(mFirebaseAuth.getCurrentUser().getUid()).setValue(userInfo);
 
+
+
                                 Toast.makeText(Notification.this, "알림이 설정되었습니다.", Toast.LENGTH_SHORT).show();
                             }
 
