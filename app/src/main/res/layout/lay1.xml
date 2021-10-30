@@ -28,56 +28,56 @@
                 android:id="@+id/txtTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="75dp"
+                android:layout_marginStart="95dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="30dp"
                 android:text="올바르게 양치하는 법"
                 android:textColor="@color/zingray"
-                android:textSize="25sp"
+                android:textSize="23sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/When"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="80dp"
                 android:layout_marginEnd="30dp"
                 android:text="When"
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/What"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="170dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="165dp"
                 android:layout_marginEnd="30dp"
                 android:text="What"
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/How"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="290dp"
                 android:layout_marginEnd="30dp"
                 android:text="How"
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/Why"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="490dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="500dp"
                 android:layout_marginEnd="30dp"
                 android:text="Why"
-                android:textSize="23sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
 
@@ -85,54 +85,54 @@
                 android:id="@+id/txtwhen1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="120dp"
                 android:layout_marginEnd="15dp"
-                android:text="  333법칙,  하루 3번 식후 3분 이내 3분동안!"
+                android:text="333법칙,  하루 3번 식후 3분 이내 3분동안!"
                 android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/txtwhat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="210dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="205dp"
                 android:layout_marginEnd="15dp"
-                android:text="  충치를 유발하는 플라그가 생기기 쉬운 부위인 치아와 잇몸의 경계 부분, 치아와 치아 사이, 어금니를 중심으로 칫솔질을 해준다.
-" />
-            android:textSize="15sp"
-            android:textStyle="bold" />
+                android:text="충치를 유발하는 플라그가 생기기 쉬운 부위인 치아와 잇몸의 경계 부분, 치아와 치아 사이, 어금니를 중심으로 칫솔질을 해준다.
+"
+                android:textSize="15sp" />
+
 
             <TextView
                 android:id="@+id/txthow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="330dp"
                 android:layout_marginEnd="15dp"
-                android:text="  바깥쪽 치아를 시작으로 칫솔을 45도 각도로 짧게 잡고, 치아 넓이의 반 정도로 잇몸선과 반대로 짧게 움직인다.  그다음 씹는 면으로 옮겨서 칫솔을 평평하게 잡고 씹는 면을 따라 왔다 갔다 한다. 잇몸선을 따라 부드럽게 양치하고 나서, 상쾌한 입냄새를 위해 혀를 뒤에서 앞으로 쓸어내듯이 칫솔질하여 입냄새를 유발하는 박테리아를 제거한다.
+                android:textSize="15sp"
+                android:text="바깥쪽 치아를 시작으로 칫솔을 45도 각도로 짧게 잡고, 치아 넓이의 반 정도로 잇몸선과 반대로 짧게 움직인다.  그다음 씹는 면으로 옮겨서 칫솔을 평평하게 잡고 씹는 면을 따라 왔다 갔다 한다. 잇몸선을 따라 부드럽게 양치하고 나서, 상쾌한 입냄새를 위해 혀를 뒤에서 앞으로 쓸어내듯이 칫솔질하여 입냄새를 유발하는 박테리아를 제거한다.
 " />
-            android:textSize="15sp"
-            android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtwhy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="530dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="540dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
-                android:text="  식후 3분이 지나면 구강 내 수소 이온농도(pH)가 낮아지고, 이때 산으로 인해 치아 표면이 손상된다. 당이 많은 케이크나, 아이스크림 등은 치아 표면에 들러붙기 쉽기때문에 식후 3분 내에 양치하는 것이 좋다.
+                android:text="식후 3분이 지나면 구강 내 수소 이온농도(pH)가 낮아지고, 이때 산으로 인해 치아 표면이 손상된다. 당이 많은 케이크나, 아이스크림 등은 치아 표면에 들러붙기 쉽기때문에 식후 3분 내에 양치하는 것이 좋다.
 그러나 산도가 높은 음식들은 pH수치가 낮기 때문에 섭취하자마자 입안을 산성화 시켜 치아표면을 약하게 만든다. 정상화 되기 위해서 침이 산성 환경을 완충하는 역할을 하는 30분 이후에 양치를 하는 것이 좋다.
-" />
+"
+                android:textSize="15sp" />
 
 
             <ImageView
                 android:id="@+id/ck1"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginStart="35dp"
+                android:layout_marginStart="55dp"
                 android:layout_marginTop="25dp"
                 android:src="@drawable/ck" />
 

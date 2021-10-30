@@ -38,14 +38,8 @@
             android:text="현재 날짜"
             android:textColor="@color/black" />
 
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/round_button_style"
-            android:src="@drawable/add" />
+
+
     </RelativeLayout>
 
     <View
@@ -125,6 +119,28 @@
         android:layout_height="2dp"
         android:background="@color/gray"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="fill_parent"
+            android:layout_height="70dp"
+            android:drawableLeft="@drawable/toothxml"
+            android:paddingLeft="20dp"
+            android:drawablePadding="20dp"
+            android:text="추가"
+            android:textAlignment="textStart"
+            android:layout_gravity="start"
+            android:background="#00000000" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/gray"/>
 
 </LinearLayout>
 

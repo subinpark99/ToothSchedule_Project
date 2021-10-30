@@ -1,19 +1,39 @@
 package com.example.toothscheduleproject;
 
 import android.app.Activity;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.TimePicker;
+
+import java.util.ArrayList;
 
 public class Schedule extends Activity implements View.OnClickListener {
+
+
     private int mYear = 0, mMonth = 0 , mDay = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.schedule);
+
+
+
+
+
+
+
+
 
         Intent intent = getIntent();
         if (intent.getExtras() != null) {
@@ -28,6 +48,10 @@ public class Schedule extends Activity implements View.OnClickListener {
         findViewById(R.id.btnLunch).setOnClickListener(this);
         findViewById(R.id.btnDinner).setOnClickListener(this);
         findViewById(R.id.ibtnBack).setOnClickListener(this);
+        findViewById(R.id.btnAdd).setOnClickListener(this);
+
+
+
     }
 
     @Override
@@ -54,7 +78,13 @@ public class Schedule extends Activity implements View.OnClickListener {
                 isScheduleDetail = true;
                 strTimeType = "저녁";
                 break;
+
+            case R.id.btnAdd:
+                isScheduleDetail = true;
+                strTimeType = "추가";
+                break;
         }
+
 
         // 스케쥴 상세 이동
         if (isScheduleDetail) {
@@ -67,4 +97,8 @@ public class Schedule extends Activity implements View.OnClickListener {
         }
 
     }
+
+
+
+
 }

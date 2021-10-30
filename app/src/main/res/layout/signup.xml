@@ -53,7 +53,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:paddingTop="8dp">
+        android:paddingTop="10dp">
 
         <TextView
             android:id="@+id/tvID"
@@ -72,7 +72,9 @@
             android:layout_marginEnd="16dp"
             android:layout_toRightOf="@id/tvID"
             android:background="#dedede"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/btnDoubleCheck"
@@ -106,7 +108,6 @@
             android:layout_toRightOf="@id/tvPW"
             android:background="#dedede"
             android:inputType="textPassword"
-            android:text=""
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
     </RelativeLayout>
 
