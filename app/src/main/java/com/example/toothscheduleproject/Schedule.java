@@ -28,13 +28,6 @@ public class Schedule extends Activity implements View.OnClickListener {
         setContentView(R.layout.schedule);
 
 
-
-
-
-
-
-
-
         Intent intent = getIntent();
         if (intent.getExtras() != null) {
             mYear = intent.getIntExtra("year", 0);

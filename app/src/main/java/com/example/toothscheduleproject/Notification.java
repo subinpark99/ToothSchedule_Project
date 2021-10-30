@@ -137,8 +137,7 @@ public class Notification extends Activity implements View.OnClickListener {
                                     alarmTimeInfo.setTitle(title);
                                     alarmTimeInfo.setHour(hourOfDay);
                                     alarmTimeInfo.setMinute(minute);
-//                                    c.set(Calendar.HOUR_OF_DAY, alarmTimeInfo.getHour());
-//                                    c.set(Calendar.MINUTE, alarmTimeInfo.getMinute());
+
                                     if (isAlreadyExist) {
                                         // 데이터가 이미 존재하면 업데이트
                                         lstAlarmTimeInfo.set(findIdx, alarmTimeInfo);
@@ -163,22 +162,12 @@ public class Notification extends Activity implements View.OnClickListener {
                             }
                         });
 
-                        // 알림 시작
-                        startAlarm(c);
                     }
                 },hour,minutes,false);
         timePicker.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         timePicker.show();
 
 
-    }
-
-    private void startAlarm(Calendar c) {
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, AlertReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 1, intent, 0);
-
-        alarmManager.cancel(pendingIntent);
     }
 
 

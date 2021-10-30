@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.toothscheduleproject">
 
-<!--  알림에 필요한 권한  -->
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-
 <!--  구글맵 권한  -->
     <uses-feature android:required="true" android:glEsVersion="0x00020000"/>
     <permission android:name="com.example.toothscheduleproject.permission.MAPS_RECEIVE"
@@ -55,8 +51,6 @@
         <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCMxXCKcm0yX8D-VVC8PR2XFGspiF-D_I4"/>
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
 
-        <!--    리시버 추가    -->
-        <receiver android:name=".AlertReceiver"/>
     </application>
 
 </manifest>
