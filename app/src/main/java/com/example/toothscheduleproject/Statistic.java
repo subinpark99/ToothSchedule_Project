@@ -49,11 +49,13 @@ public class Statistic extends Activity {
                 }
 
                 if ( userInfo != null ) {
-
                     ArrayList try_brush = userInfo.getLstToothTime();
+                    if(userInfo.getLstToothTime() == null) {
+                        tvAvgCount.setText("현재 양치 횟수는 : 0회");
+                    } else {
                     int count = try_brush.size();
                     if(count != 0) {
-                        tvAvgCount.setText("현재 양치 횟수는 : " + (count) + "회");
+                        tvAvgCount.setText("현재 양치 횟수는 : " + (count) + "회");}
                     }
                 }
             }
