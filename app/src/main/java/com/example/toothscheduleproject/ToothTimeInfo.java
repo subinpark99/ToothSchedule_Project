@@ -3,6 +3,15 @@ package com.example.toothscheduleproject;
 public class ToothTimeInfo {
 
     private String date;        // 달력 기록 날짜
+    private int dayCount;          // 스케줄이 기록되어있는 일 수
+
+    public int getDayCount() {
+        return dayCount;
+    }
+
+    public void setDayCount(int dayCount) {
+        this.dayCount = dayCount;
+    }
 
     private String timeType;    // 아침 or 점심 or 저녁
 

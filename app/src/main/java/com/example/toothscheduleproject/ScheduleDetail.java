@@ -154,6 +154,7 @@ public class ScheduleDetail extends Activity implements View.OnClickListener {
                             toothTimeInfo.setmBrushTimeType(mBrushTimeType);
                             toothTimeInfo.setmAfterMealTimeType(mAfterMealTimeType);
                             toothTimeInfo.setmSubMachineType(mSubMachineType);
+
                             if (isAlreadyExist) {
                                 // update before exist data
                                 lstToothTimeInfo.set(findIdx, toothTimeInfo);

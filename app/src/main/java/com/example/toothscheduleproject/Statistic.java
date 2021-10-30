@@ -30,9 +30,8 @@ public class Statistic extends Activity {
         setContentView(R.layout.statistic);
 
 
-
-        ImageButton ibtnBack = (ImageButton)findViewById(R.id.ibtnBack);
-        TextView tvAvgCount = (TextView)findViewById(R.id.tvAvgCount);
+        ImageButton ibtnBack = (ImageButton) findViewById(R.id.ibtnBack);
+        TextView tvAvgCount = (TextView) findViewById(R.id.tvAvgCount);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("ToothSchedule");
@@ -48,17 +47,32 @@ public class Statistic extends Activity {
                     toothTimeInfo = dataSnapshot.getValue(ToothTimeInfo.class);
                 }
 
-                if ( userInfo != null ) {
+                if (userInfo != null) {
+                    ArrayList<ToothTimeInfo> lstToothTimeInfo = userInfo.getLstToothTime();
                     ArrayList try_brush = userInfo.getLstToothTime();
-                    if(userInfo.getLstToothTime() == null) {
+                    if (lstToothTimeInfo == null)
+                        lstToothTimeInfo = new ArrayList<>();
+
+                    if (userInfo.getLstToothTime() == null) {
                         tvAvgCount.setText("현재 양치 횟수는 : 0회");
                     } else {
-                    int count = try_brush.size();
-                    if(count != 0) {
-                        tvAvgCount.setText("현재 양치 횟수는 : " + (count) + "회");}
+                        int count = try_brush.size();
+                        if (count != 0) {
+
+                            // 날 수 기록
+                            ArrayList<String> lstDay = new ArrayList<>();
+
+                            for(int i=0; i<lstToothTimeInfo.size(); i++) {
+                                if(!lstDay.contains(lstToothTimeInfo.get(i).getDate())) {
+                                    lstDay.add(lstToothTimeInfo.get(i).getDate());
+                                }
+                            }
+                            tvAvgCount.setText("현재 양치 횟수는 : " + count + "회 / "+lstDay.size());
+                        }
                     }
                 }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
