@@ -185,7 +185,7 @@ public class Survey extends Activity {
 
 
                 if (sum <= 12) {
-                    Intent intent = new Intent(getApplicationContext(), SurveyResultBadBad.class);
+                    Intent intent = new Intent(getApplicationContext(), SurveyResultBad.class);
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(getApplicationContext(), SurveyResult.class);

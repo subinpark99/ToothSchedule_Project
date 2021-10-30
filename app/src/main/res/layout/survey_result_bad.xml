@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="18sp"
+        android:textSize="23dp"
         android:layout_marginTop="16dp"
         android:text="당신의 치아 상태는"
         android:textColor="@color/black"/>
@@ -41,30 +41,40 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvResult"
         android:layout_gravity="center"
-        android:textSize="16sp"
+        android:textSize="19dp"
         android:text="치아 건강이 너무 나빠요! 치과로 가야돼요!"
         android:textAlignment="center"
         android:layout_marginBottom="20dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:background="@color/whiteblue"/>
 
-    <fragment
-        android:id = "@+id/map"
-        android:name="com.google.android.gms.maps.MapFragment"
-        android:layout_width="match_parent"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_height="350dp"
+    <TextView
+        android:id="@+id/tvComment"
+        android:layout_width="350dp"
+        android:layout_gravity="center"
+        android:layout_height="200dp"
         android:layout_weight="1"
-        map:cameraTargetLat="37.541"
-        map:cameraTargetLng="126.986"
-        map:cameraZoom="10"/>
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="19dp"
+        android:textColor="@color/black">
+    </TextView>
+
+    <Button
+        android:id="@+id/btnsearch"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="16dp"
+        android:text="치과 찾으러 가기"
+        android:background="@drawable/round_button_style"
+        android:layout_gravity="center"/>
 
 
     <Button
         android:id="@+id/btnstart"
         android:layout_width="380dp"
         android:layout_height="50dp"
-        android:layout_marginTop="10dp"
         android:layout_marginBottom="16dp"
         android:text="시작하기"
         android:background="@drawable/round_button_style"
