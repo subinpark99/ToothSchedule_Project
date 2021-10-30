@@ -34,7 +34,7 @@
         <activity android:name=".Schedule"/>
         <activity android:name=".ScheduleDetail"/>
         <activity android:name=".MyPage"/>
-
+        <receiver android:name=".AlarmReceiver"></receiver>
     </application>
 
 </manifest>
