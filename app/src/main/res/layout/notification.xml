@@ -47,6 +47,14 @@
         android:background="@drawable/round_button_style"
         android:layout_gravity="center_horizontal"/>
 
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="해지"
+        android:layout_marginTop="10dp"
+        android:id="@+id/btnCancel"
+        android:background="@drawable/round_button_style"
+        android:layout_gravity="center_horizontal"/>
 
 
 

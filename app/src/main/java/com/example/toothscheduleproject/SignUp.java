@@ -29,6 +29,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener, A
     private FirebaseAuth mFirebaseAuth;     // 파이어베이스 인증
     private DatabaseReference mDatabaseRef; // 실시간 데이터베이스
 
+
+
     private EditText
             mEtEmail,       // 이메일
             mEtPwd,         // 비밀번호
@@ -193,6 +195,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener, A
 
                     // setValue : database에 insert (삽입) 행위
                     mDatabaseRef.child("UserInfo").child(firebaseUser.getUid()).setValue(account);
+
+
 
                     Toast.makeText(SignUp.this, "회원가입에 성공하셨습니다", Toast.LENGTH_SHORT).show();
                     // 회원가입 성공 후 설문조사 페이지로 넘어감
