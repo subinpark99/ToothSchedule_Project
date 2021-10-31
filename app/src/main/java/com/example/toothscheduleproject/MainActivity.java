@@ -188,17 +188,17 @@ public class MainActivity extends AppCompatActivity {
                     for (Map.Entry<Long, Integer> entry : map.entrySet()) {
                         if (events.get(i).getCalendar().getTimeInMillis() == entry.getKey()) {
                             if (entry.getValue() == 2) {
-                                events.set(i, new EventDay(events.get(i).getCalendar(), R.drawable.dot_2));
+                                events.set(i, new EventDay(events.get(i).getCalendar(), R.drawable.dot2xml));
                             } else if (entry.getValue() == 3) {
-                                events.set(i, new EventDay(events.get(i).getCalendar(), R.drawable.dot_3));
+                                events.set(i, new EventDay(events.get(i).getCalendar(), R.drawable.dot3xml));
+                            } else if(entry.getValue() == 4) {
+                                events.set(i, new EventDay(events.get(i).getCalendar(), R.drawable.dot4));
                             } else {
-                                events.set(i, new EventDay(events.get(i).getCalendar(), R.drawable.dot));
+                                events.set(i, new EventDay(events.get(i).getCalendar(), R.drawable.dotxml));
                             }
                         }
                     }
                 }
-
-
 
                 mCalendarView.setEvents(events);
             }
