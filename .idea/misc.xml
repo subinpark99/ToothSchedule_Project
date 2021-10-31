@@ -21,6 +21,8 @@
         <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/lay6.xml" value="0.23541666666666666" />
         <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/login.xml" value="0.25343999226562525" />
         <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/mypage.xml" value="0.4" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/non_alarm.xml" value="0.23541666666666666" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/nonfic_alarm.xml" value="0.23541666666666666" />
         <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/notification.xml" value="0.23541666666666666" />
         <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/notification_detail.xml" value="0.23541666666666666" />
         <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/notification_item.xml" value="0.23541666666666666" />
@@ -33,6 +35,7 @@
         <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/survey.xml" value="0.264" />
         <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/survey_result.xml" value="0.23541666666666666" />
         <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/survey_result_bad.xml" value="0.23541666666666666" />
+        <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/survey_result_badbad.xml" value="0.23541666666666666" />
         <entry key="..\:/Project_Android/ToothScheduleProject/app/src/main/res/layout/userinfo_check.xml" value="0.23541666666666666" />
         <entry key="..\:/Project_Android/ToothScheduleProject_211018/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
         <entry key="..\:/Project_Android/ToothScheduleProject_211018/app/src/main/res/layout/infoboard.xml" value="0.25364583333333335" />
@@ -52,7 +55,6 @@
         <entry key="..\:/Project_Android/ToothScheduleProject_211018/app/src/main/res/layout/survey.xml" value="0.25364583333333335" />
         <entry key="..\:/Project_Android/ToothScheduleProject_211018/app/src/main/res/layout/survey_result.xml" value="0.25364583333333335" />
         <entry key="..\:/Project_Android/ToothScheduleProject_211018/app/src/main/res/layout/survey_result_bad.xml" value="0.25364583333333335" />
-        <entry key="..\:/Project_Android/ToothScheduleProject_211018/app/src/main/res/layout/survey_result_badbad.xml" value="0.25364583333333335" />
         <entry key="..\:/androidProjects/ToothScheduleProject/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/androidProjects/ToothScheduleProject/app/src/main/res/layout/infoboard.xml" value="0.32083333333333336" />
         <entry key="..\:/androidProjects/ToothScheduleProject/app/src/main/res/layout/login.xml" value="0.32083333333333336" />
