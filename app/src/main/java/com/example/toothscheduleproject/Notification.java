@@ -92,6 +92,7 @@ public class Notification extends Activity implements View.OnClickListener {
                 timePicker=(TimePicker)findViewById(R.id.time_picker);
                 save=(Button)findViewById(R.id.save);
                 ImageButton iBack=(ImageButton)findViewById(R.id.iBack);
+
                 save.setOnClickListener(x->{
 
                     Calendar calendar = Calendar.getInstance();
