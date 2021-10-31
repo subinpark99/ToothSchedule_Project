@@ -11,28 +11,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ToothScheduleProject">
 
-        <activity android:name=".Login">
+        <activity android:name=".LoginPage.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".SignUp">
+        <activity android:name=".LoginPage.SignUp">
 
         </activity>
 
         <!--    sub액티비티 등록    -->
-        <activity android:name=".Notification"/>
-        <activity android:name=".InfoBoard"/>
-        <activity android:name=".Survey"/>
-        <activity android:name=".SurveyResult"/>
-        <activity android:name=".SurveyResultBad"/>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Schedule"/>
-        <activity android:name=".ScheduleDetail"/>
-        <activity android:name=".MyPage"/>
-        <receiver android:name=".AlarmReceiver"></receiver>
+        <activity android:name=".Notification.Notification"/>
+        <activity android:name=".InfoBoard.Infoboard"/>
+        <activity android:name=".Survey.SurveyDo"/>
+        <activity android:name=".Survey.SurveyResult"/>
+        <activity android:name=".Survey.SurveyResultBad"/>
+        <activity android:name=".Main.MainActivity" />
+        <activity android:name=".Main.MyPage"/>
+        <activity android:name=".ScheduleSetting.Schedule"/>
+        <activity android:name=".ScheduleSetting.ScheduleDetail"/>
+        <receiver android:name=".Notification.AlarmReceiver"></receiver>
     </application>
 
 </manifest>

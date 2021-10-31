@@ -1,22 +1,12 @@
-package com.example.toothscheduleproject;
+package com.example.toothscheduleproject.ScheduleSetting;
 
 import android.app.Activity;
-import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.TimePicker;
 
-import java.util.ArrayList;
+import com.example.toothscheduleproject.R;
 
 public class Schedule extends Activity implements View.OnClickListener {
 

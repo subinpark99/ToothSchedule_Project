@@ -1,4 +1,4 @@
-package com.example.toothscheduleproject;
+package com.example.toothscheduleproject.Survey;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.toothscheduleproject.Main.MainActivity;
+import com.example.toothscheduleproject.R;
 
 public class SurveyResult extends Activity {
     @Override
@@ -46,7 +49,7 @@ public class SurveyResult extends Activity {
         btnstart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
             }

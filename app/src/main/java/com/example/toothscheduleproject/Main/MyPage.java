@@ -1,4 +1,4 @@
-package com.example.toothscheduleproject;
+package com.example.toothscheduleproject.Main;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.toothscheduleproject.LoginPage.Login;
+import com.example.toothscheduleproject.R;
+import com.example.toothscheduleproject.UserInfo;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

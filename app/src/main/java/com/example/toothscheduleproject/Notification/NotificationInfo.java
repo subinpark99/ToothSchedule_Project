@@ -1,4 +1,4 @@
-package com.example.toothscheduleproject;
+package com.example.toothscheduleproject.Notification;
 
 import java.util.ArrayList;
 import java.util.Calendar;

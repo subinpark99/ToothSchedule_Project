@@ -1,4 +1,4 @@
-package com.example.toothscheduleproject;
+package com.example.toothscheduleproject.Notification;
 
 
 import android.app.Notification;
@@ -14,6 +14,8 @@ import android.media.RingtoneManager;
 import android.os.Build;
 import androidx.core.app.NotificationCompat;
 
+import com.example.toothscheduleproject.R;
+
 
 public class AlarmReceiver extends BroadcastReceiver {
 
@@ -24,7 +26,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         this.context = context;
 
 
-        Intent busRouteIntent = new Intent(context, com.example.toothscheduleproject.Notification.class);
+        Intent busRouteIntent = new Intent(context, com.example.toothscheduleproject.Notification.Notification.class);
 
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
         stackBuilder.addNextIntentWithParentStack(busRouteIntent);

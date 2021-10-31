@@ -1,5 +1,7 @@
 package com.example.toothscheduleproject;
 
+import com.example.toothscheduleproject.Notification.NotificationInfo;
+
 import java.util.ArrayList;
 
 /**

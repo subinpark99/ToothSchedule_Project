@@ -1,4 +1,4 @@
-package com.example.toothscheduleproject;
+package com.example.toothscheduleproject.Survey;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.toothscheduleproject.R;
+import com.example.toothscheduleproject.UserInfo;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,7 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Survey extends Activity {
+public class SurveyDo extends Activity {
 
     private FirebaseAuth mFirebaseAuth;     // 파이어베이스 인증
     private DatabaseReference mDatabaseRef; // 실시간 데이터베이스

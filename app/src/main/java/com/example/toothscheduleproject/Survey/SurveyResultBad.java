@@ -1,4 +1,4 @@
-package com.example.toothscheduleproject;
+package com.example.toothscheduleproject.Survey;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.toothscheduleproject.Main.MainActivity;
+import com.example.toothscheduleproject.R;
 
 public class SurveyResultBad extends AppCompatActivity {
     @Override

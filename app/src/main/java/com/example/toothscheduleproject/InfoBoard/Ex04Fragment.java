@@ -1,4 +1,4 @@
-package com.example.toothscheduleproject;
+package com.example.toothscheduleproject.InfoBoard;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,13 +7,15 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
-public class Ex03Fragment extends Fragment {
+import com.example.toothscheduleproject.R;
+
+public class Ex04Fragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
-                R.layout.lay3, container, false);
+                R.layout.lay4, container, false);
 
         return rootView;
     }

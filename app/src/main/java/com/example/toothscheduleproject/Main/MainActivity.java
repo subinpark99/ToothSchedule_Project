@@ -1,4 +1,4 @@
-package com.example.toothscheduleproject;
+package com.example.toothscheduleproject.Main;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -15,6 +15,12 @@ import com.applandeo.materialcalendarview.CalendarView;
 import com.applandeo.materialcalendarview.EventDay;
 import com.applandeo.materialcalendarview.exceptions.OutOfDateRangeException;
 import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
+import com.example.toothscheduleproject.InfoBoard.Infoboard;
+import com.example.toothscheduleproject.Notification.Notification;
+import com.example.toothscheduleproject.R;
+import com.example.toothscheduleproject.ScheduleSetting.Schedule;
+import com.example.toothscheduleproject.ToothTimeInfo;
+import com.example.toothscheduleproject.UserInfo;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,7 +30,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -143,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         btnInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), InfoBoard.class);
+                Intent intent = new Intent(getApplicationContext(), Infoboard.class);
                 startActivity(intent);
             }
         });

@@ -8,7 +8,7 @@
     android:layout_marginTop="70dp"
     android:background="@color/wgray"
     android:orientation="vertical"
-    tools:context=".Ex03Fragment">
+    tools:context=".InfoBoard.Ex03Fragment">
 
     <ScrollView
         android:layout_width="match_parent"

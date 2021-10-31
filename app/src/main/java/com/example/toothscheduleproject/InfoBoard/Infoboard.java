@@ -1,4 +1,4 @@
-package com.example.toothscheduleproject;
+package com.example.toothscheduleproject.InfoBoard;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +9,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.toothscheduleproject.Main.MainActivity;
+import com.example.toothscheduleproject.R;
+
 import me.relex.circleindicator.CircleIndicator3;
 
-public class InfoBoard extends AppCompatActivity {
+public class Infoboard extends AppCompatActivity {
 
     private ViewPager2 mPager;
     private FragmentStateAdapter pagerAdapter;

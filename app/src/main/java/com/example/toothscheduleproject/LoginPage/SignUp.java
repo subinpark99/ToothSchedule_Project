@@ -1,4 +1,4 @@
-package com.example.toothscheduleproject;
+package com.example.toothscheduleproject.LoginPage;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +13,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.toothscheduleproject.R;
+import com.example.toothscheduleproject.Survey.SurveyDo;
+import com.example.toothscheduleproject.UserInfo;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -200,7 +203,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener, A
 
                     Toast.makeText(SignUp.this, "회원가입에 성공하셨습니다", Toast.LENGTH_SHORT).show();
                     // 회원가입 성공 후 설문조사 페이지로 넘어감
-                    Intent intent = new Intent(getApplicationContext(), Survey.class);
+                    Intent intent = new Intent(getApplicationContext(), SurveyDo.class);
                     startActivity(intent);
                     finish();
                 } else {
