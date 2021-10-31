@@ -56,19 +56,18 @@
 
     </RelativeLayout>
 
-
-
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@color/whiteblue"/>
 
     <Button
-        android:id="@+id/btnGraph"
+        android:id="@+id/btnAppVer"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:text="앱 정보"
+        android:onClick="OnClickHandler"
         android:background="#00000000"
-        android:text="그래프와 기록"
         android:textColor="@color/black" />
 
     <View
@@ -89,19 +88,7 @@
         android:layout_height="2dp"
         android:background="@color/whiteblue"/>
 
-    <Button
-        android:id="@+id/btnAppVer"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:text="앱 정보"
-        android:onClick="OnClickHandler"
-        android:background="#00000000"
-        android:textColor="@color/black" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/whiteblue"/>
 
 
 </LinearLayout>

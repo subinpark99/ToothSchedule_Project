@@ -31,7 +31,6 @@ public class MyPage extends Activity {
         setContentView(R.layout.mypage);
 
         ImageButton ibtnBack = (ImageButton) findViewById(R.id.ibtnBack);
-        Button btnGraph = (Button) findViewById(R.id.btnGraph);
         Button btnLogout = (Button) findViewById(R.id.btnLogout);
         Button btnAppVer=(Button) findViewById(R.id.btnAppVer);
         TextView tvID = findViewById(R.id.tvID);
@@ -84,15 +83,7 @@ public class MyPage extends Activity {
             }
         });
 
-        // 그래프와 기록 버튼을 눌렀을 때
-        btnGraph.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Statistic.class);
-                startActivity(intent);
-            }
-        });
-
+        // 로그아웃
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,6 +99,7 @@ public class MyPage extends Activity {
 
     }
 
+    // 버전 정보 보여줌
     public void OnClickHandler(View view)
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

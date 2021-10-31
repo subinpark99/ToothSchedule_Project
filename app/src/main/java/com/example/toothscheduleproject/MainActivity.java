@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,6 +46,51 @@ public class MainActivity extends AppCompatActivity {
         ImageButton ibtnMypage = findViewById(R.id.ibtnMypage);
         ImageButton ibtnNotification = findViewById(R.id.ibtnNotification);
         Button btnInfo = findViewById(R.id.btnInfo);
+        TextView tvAvgCount = (TextView) findViewById(R.id.tvAvgCount);
+
+        mDatabaseRef.child("UserInfo").orderByChild("idToken").equalTo(mFirebaseAuth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                UserInfo userInfo = null;
+                ToothTimeInfo toothTimeInfo = null;
+
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    userInfo = dataSnapshot.getValue(UserInfo.class);
+                    toothTimeInfo = dataSnapshot.getValue(ToothTimeInfo.class);
+                }
+
+                if (userInfo != null) {
+                    ArrayList<ToothTimeInfo> lstToothTimeInfo = userInfo.getLstToothTime();
+                    ArrayList try_brush = userInfo.getLstToothTime();
+                    if (lstToothTimeInfo == null)
+                        lstToothTimeInfo = new ArrayList<>();
+
+                    if (userInfo.getLstToothTime() == null) {
+                        tvAvgCount.setText("평균 양치 횟수 : 0회");
+                    } else {
+                        float count = try_brush.size();
+                        if (count != 0) {
+
+                            // 날 수 기록
+                            ArrayList<String> lstDay = new ArrayList<>();
+
+                            for(int i=0; i<lstToothTimeInfo.size(); i++) {
+                                if(!lstDay.contains(lstToothTimeInfo.get(i).getDate())) {
+                                    lstDay.add(lstToothTimeInfo.get(i).getDate());
+                                }
+                            }
+                            String brushAvg = String.format("%.2f",count/lstDay.size());
+                            tvAvgCount.setText("평균 양치 횟수 : " + brushAvg + "회");
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         // 달력
         mCalendarView = findViewById(R.id.calendarView);
