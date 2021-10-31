@@ -1,5 +1,4 @@
 package com.example.toothscheduleproject;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 
@@ -95,36 +94,35 @@ public class Notification extends Activity implements View.OnClickListener {
 
                 save.setOnClickListener(x->{
 
-                    Calendar calendar = Calendar.getInstance();
-                    calendar.setTimeInMillis(System.currentTimeMillis());
-                    int hour=timePicker.getHour();
-                    int minute=timePicker.getMinute();
-                    calendar.set(Calendar.HOUR_OF_DAY,hour);
-                    calendar.set(Calendar.MINUTE,minute);
+                            Calendar calendar = Calendar.getInstance();
+                            calendar.setTimeInMillis(System.currentTimeMillis());
+                            int hour=timePicker.getHour();
+                            int minute=timePicker.getMinute();
+                            calendar.set(Calendar.HOUR_OF_DAY,hour);
+                            calendar.set(Calendar.MINUTE,minute);
 
-                    if (calendar.before(Calendar.getInstance())) {
-                        calendar.add(Calendar.DATE, 1);
-                    }
-                    iBack.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            finish();
+                            if (calendar.before(Calendar.getInstance())) {
+                                calendar.add(Calendar.DATE, 1);
+                            }
+                            iBack.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    finish();
+                                }
+                            });
+                            AlarmManager alarmManager=(AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
+                            if (alarmManager != null) {
+                                Intent intent = new Intent(this, AlarmReceiver.class);
+                                PendingIntent alarmIntent = PendingIntent.getBroadcast(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+
+
+                                Toast.makeText(Notification.this,"알람이 저장되었습니다.",Toast.LENGTH_LONG).show();
+                            }
+
+
+
                         }
-                    });
-                    AlarmManager alarmManager=(AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
-                    if (alarmManager != null) {
-                        Intent intent = new Intent(this, AlarmReceiver.class);
-                        PendingIntent alarmIntent = PendingIntent.getBroadcast(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-                        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-                                AlarmManager.INTERVAL_DAY, alarmIntent);
-
-                        Toast.makeText(Notification.this,"알람이 저장되었습니다.",Toast.LENGTH_LONG).show();
-                    }
-
-
-
-                }
                 );
 
 

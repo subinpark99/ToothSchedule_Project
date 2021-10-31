@@ -1,6 +1,7 @@
 package com.example.toothscheduleproject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class NotificationInfo {
     private String title;       // 알림이름
@@ -47,4 +48,6 @@ public class NotificationInfo {
     public void setMinute(int minute) {
         this.minute = minute;
     }
+
+
 }
