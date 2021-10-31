@@ -34,45 +34,62 @@ public class Notification extends Activity {
 
 
         ImageButton ibtnBack = findViewById(R.id.ibtnBack);
-        TimePicker timePicker=(TimePicker)findViewById(R.id.time_picker);
-        Button btnSave=(Button)findViewById(R.id.btnSave);
-        TextView tvSaveTime= (TextView)findViewById(R.id.tvSaveTime);
+        TimePicker timePicker = (TimePicker) findViewById(R.id.time_picker);
+        Button btnSave = (Button) findViewById(R.id.btnSave);
+        TextView tvSaveTime = (TextView) findViewById(R.id.tvSaveTime);
+        Button btnCancel = (Button) findViewById(R.id.btnCancel);
 
-        btnSave.setOnClickListener(x->{
+        AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
+        if (alarmManager != null) {
+            Intent intent = new Intent(this, AlarmReceiver.class);
 
-                    Calendar calendar = Calendar.getInstance();
-                    calendar.setTimeInMillis(System.currentTimeMillis());
-                    int hour=timePicker.getHour();
-                    int minute=timePicker.getMinute();
-                    calendar.set(Calendar.HOUR_OF_DAY,hour);
-                    calendar.set(Calendar.MINUTE,minute);
+            btnSave.setOnClickListener(x -> {
 
-                    if (calendar.before(Calendar.getInstance())) {
-                        calendar.add(Calendar.DATE, 1);
-                    }
+                        Calendar calendar = Calendar.getInstance();
+                        calendar.setTimeInMillis(System.currentTimeMillis());
+                        int hour = timePicker.getHour();
+                        int minute = timePicker.getMinute();
+                        calendar.set(Calendar.HOUR_OF_DAY, hour);
+                        calendar.set(Calendar.MINUTE, minute);
 
-                    AlarmManager alarmManager=(AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
-                    if (alarmManager != null) {
-                        Intent intent = new Intent(this, AlarmReceiver.class);
+                        if (calendar.before(Calendar.getInstance())) {
+                            calendar.add(Calendar.DATE, 1);
+                        }
                         PendingIntent alarmIntent = PendingIntent.getBroadcast(this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
                         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
                                 AlarmManager.INTERVAL_DAY, alarmIntent);
 
-                        Toast.makeText(Notification.this,"알람이 저장되었습니다.",Toast.LENGTH_LONG).show();
+                        Toast.makeText(Notification.this, "알람이 저장되었습니다.", Toast.LENGTH_LONG).show();
+
+                        tvSaveTime.setText("설정된 알람 : " + hour + "시 " + minute + "분");
                     }
+            );
 
-            tvSaveTime.setText("설정된 알람 : "+hour+"시 "+minute+"분");
+            ibtnBack.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
                 }
-        );
+            });
 
-        ibtnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
+            btnCancel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    PendingIntent sender = PendingIntent.getBroadcast(Notification.this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                    if (sender != null) {
+                        alarmManager.cancel(sender);
+                        sender.cancel();
+                    }
+                    Toast.makeText(Notification.this, "알람이 해지되었습니다.", Toast.LENGTH_LONG).show();
+                    tvSaveTime.setText("");
+
+                }
+            });
+
+        }
     }
 }
 
