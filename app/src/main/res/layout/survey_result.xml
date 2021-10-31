@@ -15,6 +15,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:text="당신의 양치 습관 점수!"
         android:textColor="@color/black"
         android:background="@drawable/round_button_style"/>
@@ -29,9 +30,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="23dp"
+        android:textSize="20dp"
         android:layout_marginTop="10dp"
-        android:text="당신의 치아 상태는"
+        android:text="당신의 치아 관리 상태는"
         android:textColor="@color/black"/>
 
     <TextView
@@ -44,7 +45,8 @@
         android:textAlignment="center"
         android:textSize="19dp"
         android:textColor="@color/black"
-        android:background="@color/whiteblue"/>
+        android:padding="8dp"
+        android:background="@drawable/round_button_style"/>
 
     <TextView
         android:id="@+id/tvComment"
@@ -55,7 +57,7 @@
         android:layout_weight="1"
         android:textAlignment="center"
         android:gravity="center"
-        android:textSize="19dp"
+        android:textSize="16sp"
         android:textColor="@color/black">
     </TextView>
 

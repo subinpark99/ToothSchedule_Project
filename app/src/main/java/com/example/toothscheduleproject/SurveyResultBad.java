@@ -20,8 +20,9 @@ public class SurveyResultBad extends AppCompatActivity {
         Button btnsearch = (Button) findViewById(R.id.btnsearch);
         TextView tvComment = (TextView)findViewById(R.id.tvComment);
 
-        tvComment.setText(Html.fromHtml("※ 기본적인 3.3.3 양치 방법 ※"+ "<br/>" + "<br/>" + "1. 하루 3번 이상 양치하기" + "<br/>" + "<br/>" + "2. 3분 이상 꼼꼼하게 양치하기" + "<br/>"
-                + "<br/>" + "3. 식후 3분안에 양치하기" +"<br/>" + "<br/>" + "4. 치약은 칫솔의 1/3만 묻히기" + "<br/>" + "<br/>" + "귀찮다고 안하실 건가요?" + "<br/>" + "<br/>"
+        tvComment.setText(Html.fromHtml("※ 기본적인 3.3.3 양치 방법 ※<br/><br/>" + "1. 하루 3번 이상 양치하기<br/><br/>"
+                + "2. 3분 이상 꼼꼼하게 양치하기<br/><br/>" + "3. 식후 3분안에 양치하기<br/>" + "<br/>" + "4. 치약은 칫솔의 1/3만 묻히기<br/><br/>"
+                + "귀찮다고 안하실 건가요?<br/><br/>"
                 +  "빨리 관리 시작해봐요!"));
 
         btnstart.setOnClickListener(new View.OnClickListener() {
@@ -29,6 +30,7 @@ public class SurveyResultBad extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

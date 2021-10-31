@@ -182,15 +182,15 @@ public class Survey extends Activity {
                 });
 
                 //점수 총합이 12점 이하이면 치과추천으로 넘어감
-
-
                 if (sum <= 12) {
                     Intent intent = new Intent(getApplicationContext(), SurveyResultBad.class);
                     startActivity(intent);
+                    finish();
                 } else {
                     Intent intent = new Intent(getApplicationContext(), SurveyResult.class);
                     intent.putExtra("sum",sum);
                     startActivity(intent);
+                    finish();
                 }
 
             }

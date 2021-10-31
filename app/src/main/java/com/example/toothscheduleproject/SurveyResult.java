@@ -22,7 +22,7 @@ public class SurveyResult extends Activity {
         int number = intent.getIntExtra("sum",0);
         if(number <= 19){
             imageView.setImageResource(R.drawable.soso);
-            tvResult.setText(Html.fromHtml("치아 상태가 괜찮네요. 조금 더 신경쓰면 멋쟁이!" + "<br/>" + "<br/>" +
+            tvResult.setText(Html.fromHtml("치아 상태가 괜찮네요.<br/> 조금 더 신경쓰면 멋쟁이!<br/>" +
                     "좋은 양치 방법은 어떤 것들이 있을까요??"));
 
             tvComment.setText(Html.fromHtml("※ 치아를 잘 관리하는 방법 ※"+ "<br/>" + "<br/>" + "1. 치약은 적당히" + "<br/>" + "<br/>" + "2. 칫솔에 물 묻히지 않기" + "<br/>"
@@ -46,9 +46,9 @@ public class SurveyResult extends Activity {
         btnstart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

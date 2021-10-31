@@ -198,6 +198,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener, A
                     // 회원가입 성공 후 설문조사 페이지로 넘어감
                     Intent intent = new Intent(getApplicationContext(), Survey.class);
                     startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(SignUp.this, "회원가입에 실패하셨습니다", Toast.LENGTH_SHORT).show();
                 }
