@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <!--  상단  -->
 
@@ -43,14 +44,22 @@
 
     </RelativeLayout>
 
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:id="@+id/tvAvgCount"
+        android:background="@drawable/round_button_style"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        />
 
     <!--  중간 (달력들어갈 곳)  -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         >
-
         <com.applandeo.materialcalendarview.CalendarView
             android:id="@+id/calendarView"
             android:layout_width="match_parent"
@@ -61,12 +70,12 @@
             app:todayLabelColor="#7BB6FF" />
     </LinearLayout>
 
+
     <Space
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_weight="1"
         />
-
 
     <!--  하단 (홈, 정보 게시판 버튼)  -->
     <LinearLayout
